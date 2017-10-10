@@ -1,0 +1,40 @@
+@import '../common';
+.g-teachingPlan{/*1646内容1582*/
+  width:100%;padding:20/16rem 32/1646*100%;.box-sizing();
+  .g-teachingPlanHeader{
+    button{}
+    .gpback{}
+    .blueButton{}
+  }
+  .g-teachingPlanSection{/*1582*/
+    width:100%;
+    /*文字部分*/
+    .g-teachingHeaderH{
+      width:100%;margin:40/16rem 0 20/16rem;position:relative;
+      h2{.fontSize(18);color:@HColor;.marginRight(20,1582);}
+      span{font-size:14/16rem;color:#999;position:absolute;bottom:0;left:105/16rem}
+    }
+    /*button组部分*/
+    .gs-button{/*800*/
+      .width(800,1582);
+      .elGroupButton_two{
+        button{
+          a{display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;}
+        }
+      }
+      .buttonChild{position:relative;}
+      /*每一个button为72px*/
+    }
+    /*表格部分*/
+    .g-teachingPlanContent{/*1582*/
+      width:100%;.marginTop(20);
+      .g-teacherName{display:inline-block;width:75px;}
+      .g-courseNum{display:inline-block;}
+    }
+  }
+}
+
+
+
+
+

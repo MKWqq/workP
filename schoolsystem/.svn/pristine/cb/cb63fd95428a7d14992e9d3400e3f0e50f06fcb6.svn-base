@@ -1,0 +1,91 @@
+@import '../common.less';
+.fuzzyInput .el-input__inner{height:1.75rem;text-indent:20px;
+  -webkit-border-radius: 0.875rem;
+  -moz-border-radius: 0.875rem;
+  border-radius: 0.875rem;
+}
+.msgButton.el-button+.el-button{margin-left:0;}
+.msgButton.el-button{  -webkit-border-radius: 1.125rem;
+  -moz-border-radius: 1.125rem;
+  border-radius: 1.125rem;}
+.fuzzyInput .el-input__icon{left:0;}
+.personPicture .el-button--success{border-color:#13b5b1;background:#13b5b1;}
+.personPicture .el-button--success:active{border-color:#009f9b;background:#009f9b;}
+.gL-section .el-tree{border:none;}
+
+/*message*/
+.gh-section .el-form-item{float:left;}
+.gh-section .el-form-item:not(:nth-of-type(1)){margin-left:2.53%;}
+.gh-buttonGroup .el-button{width:100px;font-size:0.875rem;height:30px;padding:0;}
+.gh-buttonGroup .el-button span{position:relative;top:-2px;}
+/*.g-section .el-button-group .el-button{width:4.5rem;}*/
+.g-headerButtonCss .el-button-group .el-button{width:4.5rem;padding:0.5rem 0.625rem;}
+/*.g-section .el-button-group .el-button:nth-of-type(odd):hover{background:#4da1ff;border-color:#4da1ff;}
+.g-section .el-button-group .el-button:nth-of-type(even):hover{background:#ff5b5b;border-color:#ff5b5b;}*/
+.addDialog .el-select{width:100%;}
+
+/*table*/
+.gs-table .alertsList div {
+  text-align: center;
+}
+/*form表单require效果*/
+.notRequire .el-form-item.is-required .el-form-item__label:before{content:''}
+.notRequire .el-form-item__error{display:none;}
+
+
+
+/*两列排版+.addDialog样式——在studentMessage.less中*/
+.g-twoColumDialog .el-dialog--tiny{width:52.5rem;}
+
+/*时间设置页面*/
+/*table框中时间选择*/
+.g-timeSetting .g-timeContent_two .el-input__icon{display:none;}
+.g-timeSetting .g-timeContent_two .el-input__inner{border:none;padding:0;background:none;color:#666;}
+.alertsList .g-hasBorder.el-table th{text-align:center;border-right:1px solid #fff;}
+.alertsList .g-hasBorder.el-table td{text-align:center;}
+
+/*排课管理页面*/
+/*复制弹框*/
+.copyDialog.el-dialog__wrapper{background:rgba(0,0,0,.3);}
+/*header按钮*/
+.gs-button.alertsBtn {
+  margin: 0;
+}
+
+
+
+/*班级上课时间限制*/
+.alertsList .g-timeSettingTable.el-table td{height:5.9375rem;text-align:center;}
+.alertsList .g-timeSettingTable.el-table{border-top:none;/*border-left:1px solid #dfe6ec;border-right:1px solid #dfe6ec;*/}
+.alertsList .g-timeSettingTable.el-table th{text-align:center;}
+.alertsList .g-timeSettingTable.el-table td:hover{cursor:pointer;}
+/*.alertsList .g-timeSettingTable.el-table tbody tr:hover>td{background:none;}*/
+.g-timeSettingTable.el-table tbody tr:hover>td{background:none;}
+.alertsList .g-NotHover.el-table tbody tr:hover>td{background:none;}
+.gs-table .NotTdPadding td .cell{padding-left:0;padding-right:0;}
+
+/*手动调课页面*/
+.alertsList .g-ManualScheduceTable.el-table td{height:3.125rem;text-align:center;}
+
+/*common*/
+/*返回流程图添加返回按钮*/
+/*.g-gobackChart:before{content:url('../../assets/img/schManagementSystem/teachingAdministration/arrangeClasses/icon_return.png');width:0.875rem;height:0.875rem;margin-right:0.625rem;}*/
+.g-gobackChart img{width:0.875rem;margin-right:0.225rem;}
+
+/*tree树样式设置*/
+.g-tree .el-tree{width:100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+
+
+/*字体颜色为红色*/
+.delete span{color:#ff5b5b;font-size:0.875rem;}
+
+/*考评分组，分组名称input的width*/
+.g-eg-groupName{width:25.1875rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+

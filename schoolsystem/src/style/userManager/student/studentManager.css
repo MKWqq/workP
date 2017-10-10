@@ -1,0 +1,50 @@
+@import '../../common.less';
+.fuzzyInput .el-input__inner{height:1.75rem;text-indent:20px;
+  -webkit-border-radius: 0.875rem;
+  -moz-border-radius: 0.875rem;
+  border-radius: 0.875rem;
+}
+.msgButton.el-button+.el-button{margin-left:0;}
+.msgButton.el-button{  -webkit-border-radius: 1.125rem;
+  -moz-border-radius: 1.125rem;
+  border-radius: 1.125rem;}
+.fuzzyInput .el-input__icon{left:0;}
+.personPicture .el-button--success{border-color:#13b5b1;background:#13b5b1;}
+.personPicture .el-button--success:active{border-color:#009f9b;background:#009f9b;}
+.gL-section .el-tree{border:none;}
+
+/*message*/
+.gh-section .el-form-item{float:left;}
+.gh-section .el-form-item:not(:nth-of-type(1)){margin-left:2.53%;}
+.gh-buttonGroup .el-button{width:100px;font-size:0.875rem;height:30px;padding:0;}
+.gh-buttonGroup .el-button span{position:relative;top:-2px;}
+.g-section .el-button-group .el-button{width:4.5rem;}
+/*.g-section .el-button-group .el-button:nth-of-type(odd):hover{background:#4da1ff;border-color:#4da1ff;}
+.g-section .el-button-group .el-button:nth-of-type(even):hover{background:#ff5b5b;border-color:#ff5b5b;}*/
+.addDialog .el-select{width:100%;}
+
+/*table*/
+.gs-table .alertsList div {
+  text-align: center;
+}
+/*form表单require效果*/
+.notRequire .el-form-item.is-required .el-form-item__label:before{content:''}
+.notRequire .el-form-item__error{display:none;}
+
+
+/*修改学生基本信息弹框dialog*/
+/*两列排版+.addDialog样式——在studentMessage.less中*/
+.g-twoColumDialog .el-dialog--tiny{width:52.5rem;}
+
+/*studentRecord.vue*/
+/*select选择*/
+.g-studentRecord .el-select{width:100%;}
+.g-studentRecord .g-floatLeft{width:42.8%;}
+.g-studentRecord .el-button{width:100%;}
+
+
+
+
+
+
+

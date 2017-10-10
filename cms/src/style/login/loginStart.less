@@ -1,0 +1,62 @@
+.color{color:#4a4a4a;}
+.border{border:none;outline:none;}
+.background{background:#fff;}
+.width(@width,@parentWidth){width:(@width/@parentWidth)*100%;}
+.height(@height,@parentHeight){height:(@height/@parentHeight)*100%;}
+.middle(@marginTop,@parentWidth){margin-top:(@marginTop/@parentWidth)*100%;}
+.center(@marginLeft,@parentWidth){margin-left:(@marginLeft/@parentWidth)*100%;}
+#userSign input:not(.userRemCheck){.width(444,464);height:100%;display:table-cell;vertical-align:middle;.border;background:none;.center(20,464);
+  &:focus{.border;}
+}
+#userSign{.width(464,1732);.height(580,1020);.middle(86,1732);.center(644,1732);text-align:left;
+  /*div{border-radius:5px;}
+  .userName{width:100%;.height(50,580);.background;
+    input{.color;}
+  }
+  .userPwd{width:100%;.height(50,580);.middle(32,464);.background;position:relative;
+    input{.color;}
+    img{position:absolute;.width(45,464);right:(8/464)*100%;top:0;
+      &:hover{cursor:pointer;}
+    }
+  }
+  .userRemember{width:100%;.height(24,580);.middle(30,464);position:relative;
+    input{.width(24,464);height:100%;}
+    span{display:inline-block;.center(16,464);.middle(4,464);position:absolute;color:#fff;}
+  }
+  .userSubmit{width:100%;.height(50,580);.middle(44,464);text-align:center;
+    button{border-radius:5px;width:100%;height:100%;background:#0ea4b7;color:#fff;cursor:pointer;.border;}
+  }
+  .promptMsg{width:100%;.height(20,580);.middle(30,464);text-align:center;position:relative;
+    img{height:100%;margin-right:(10/464)*100%;}
+    span{position:relative;top:-3px;color:#e9cf21;}
+  }*/
+}
+.SignInItem{margin-bottom:(32/464)*100%;}
+.hidePwd,.showPwd{position:absolute;.width(36,464);right:(8/464)*100%;top:0;
+  &:hover{cursor:pointer;}
+}
+.submitSignIn{width:100%;}
+.promptMsg{width:100%;.height(20,580);.middle(30,464);text-align:center;position:relative;
+  img{height:100%;margin-right:(10/464)*100%;}
+  span{position:relative;top:-3px;color:#e9cf21;}
+}
+
+/*
+
+window.setTimeout (function(){$(".userPwd input[type='text']")[0]. focus();},0 );
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

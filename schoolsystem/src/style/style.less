@@ -1,0 +1,309 @@
+@import './common';
+/*flex布局*/
+/*横向一排显示,且与父级元素无边距*/
+.g-liOneRow{.flex();justify-content:space-between;}
+/*横向一排显示,且与父级元素无边距,可换行*/
+.g-liOneWrapRow{.flex();justify-content:space-between;flex-wrap:wrap;}
+/*横向一排显示,且与父级元素有边距*/
+.g-liOneSpaceRow{.flex();justify-content:space-around;}
+/*横向一排显示,排版在开始位置*/
+.g-flexStartRow{.flex();justify-content:flex-start;}
+/*横向一排显示,排版在开始位置,可换行*/
+.g-flexStartWrapRow{.flex();justify-content:flex-start;flex-wrap:wrap;}
+/*横向一排显示,且靠右显示*/
+.g-flexEndRow{.flex();justify-content:flex-end;}
+/*横向一排显示,排版居中位置*/
+.g-flexCenterRow{.flex();justify-content:center;}
+/*单个垂直居中*/
+.selfCenter{align-self: center;}
+/*单个垂直上*/
+.selfTop{align-self: flex-start;}
+/*单个元素占据空白*/
+.selfSpace{flex-grow:1;}
+
+/*switch*/
+.g-switch{
+  span{margin-right:20/16rem;}
+}
+
+/*el-tree*/
+.el-tree{border:none;}
+
+/*树table组件*/
+.g-tree-space{display:inline-block;.widthRem(20);.height(20);}
+.g-iconC:hover{cursor:pointer;}
+.g-iconC{.fontSize(14);.widthRem(20);.height(20);display:inline-block;}
+
+/*el-form*/
+/*自定义el-select旁的文字说明*/
+.defineSelect{
+  span{.fontSize(14);color:@normalColor;margin-right:8/16rem;}
+}
+/*排多行el-form-item*/
+.moreFormItem{
+  .el-form-item{float:left;.widthRem(224);margin-right:20/16rem;}
+}
+/*主体内容距边距都有32px的间距*/
+.g-container{/*1582*/
+  .width(1582,1646);padding:20/16rem 32/1646*100%;
+  &.g-containerNoPadding{padding:0;}
+  /*含border样式，学生统计信息样式*/
+  header{padding-bottom:20/16rem;border-bottom:1px solid @borderColor;}
+  .g-selection{.marginTop(20);}
+  .gs-header{padding:20/16rem 0;}
+  /*不含border*/
+  header.g-textHeader{border:0px;
+    /*最上面的header处是文本信息*/
+    h2{.fontSize(20);color:@HColor;}
+  }
+  h2{.fontSize(20);color:@HColor;}
+  /*最上面的header处是button*/
+  /*button处img大小*/
+  .g-imgContainer img{width:0.875rem;margin-right:0.225rem;}
+}
+
+.moreFormItem{}
+
+/*button*/
+/*上边button两个群组之间间距*/
+.elGroupButton_two{margin-left:7.5%;}
+/*无margin-top*/
+.alertsBtn{margin:0;width:50%;}
+/*el-button----*/
+/*右边button排版*/
+.flex_right{.flex();justify-content:flex-end;}
+/*一行有多个button，且为圆角*/
+.g-button{.marginTop(20);text-align:center;
+  .el-button{.border-radius(1rem);padding:0.5rem 2.725rem;}
+  .el-button:not(:first-of-type){margin-left:30/16rem;}
+}
+/*el-button圆角*/
+.radiusButton.el-button{.border-radius(1rem);padding:0.5rem 1.725rem;}
+/*el-button排版在最底端中线上*/
+.examRadiusButton{position:absolute;bottom:0;.transformTranslate(0,50%);z-index:2;}
+
+/*el-table*/
+/*el-table中的input框*/
+.tableInput{border:none;.widthRem(60);.height(24);text-align:center;}
+/*el-table兄弟元素有h2等元素*/
+.g-tableH{/*920*/
+  .width(920,1582);
+  &>header{width:100%;border:1px solid @elementUiBorder;.box-sizing();padding:0;
+    h2{width:100%;font-size:1rem;color:@HColor;.height(50);margin-left:20/16rem;}
+  }
+  .g-fuzzyInput{margin-right:20/16rem;}
+}
+
+
+
+/*给section加一个margin-top*/
+.g-sectionMargin{.marginTop(30);}
+
+/*排版*/
+/*自定义label*/
+.g-label{margin-right:25/16rem;.fontSize(14);color:@normalColor;}
+/*tree下面input框*/
+.g-treeBInput{width:100%;position:absolute;bottom:50/16rem;left:0;}
+.g-treeBInput .searchBtn{display:inline-block;.widthRem(36);.height(36);text-align:center;background:@buttonActive;color:#fff;.border-radius(50%);position:absolute;top:0;right:0;}
+.g-treeBInput .searchBtn:hover{cursor: pointer;}
+/*成绩录入小框*/
+.g-examEntry{/*247*/
+  width:247px;.NotLineheight(180);padding:2rem 0;border:1px solid @borderColor;.box-sizing();position:relative;
+  .g-examChart{/*100*/
+    width:100px;
+  }
+  .g-examTextContainer{/*100*/
+    width:100px;height:100%;
+    h4{.fontSize(14);color:@HColor;.marginBottom(15);}
+    .g-examTextRow{.fontSize(13);color:@normalColor;.marginBottom(10);}
+  }
+  .examRadiusButton{position:absolute;bottom:0;.transformTranslate(0,50%);z-index:2;}
+}
+
+/*图形页面*/
+/*多状态颜色*/
+.g-col-1x{.widthRem(240);}
+.g-col-7x{.widthRem(168);}
+.g-col-5x{.widthRem(120);}
+.g-space-1x{.widthRem(85);}
+
+/*颜色*/
+/*线条颜色*/
+.g-content--chart div[class*='line--width'],
+.g-content--chart .g-line_container{
+  .lineTwo.un_able,span.line.un_able{border-color:@intervalColor}
+  .lineTwo.completed,span.line.completed{border-color:@green;}
+  .lineTwo.main_process,span.line.main_process{border-color:@buttonActive;}
+  .lineTwo.second_process,span.line.second_process{border-color:@backgroundBlue;}
+  .lineTwo.inactived,span.line.inactived{border-color:@borderColor;}
+}
+/*文字和箭头颜色*/
+.item_a.un_able,.step.un_able:before{color:#fff;background:@intervalColor;}
+.arrow.un_able{color:@intervalColor;}
+.item_a.completed,.step.completed:before{color:#fff;background:@green;}
+.arrow.completed{color:@green;}
+.item_a.main_process,.step.main_process:before{color:#fff;background:@buttonActive;}
+.arrow.main_process{color:@buttonActive;}
+.item_a.second_process,.step.second_process:before{color:#fff;background:@backgroundBlue;}
+.arrow.second_process{color:@backgroundBlue;}
+.item_a.inactived,.step.inactived:before{color:@normalColor;border:1px solid @borderColor;}
+.arrow.inactived{color:@borderColor;}
+
+/*批量导入，上传文件的button加上传按钮button样式*/
+.g-upload-section{/*1582*/
+  width:100%;.marginTop(20);
+  .fileName{/*div*/
+    .widthRem(250);text-indent:10/16rem;height:36px;border:1px solid #bfcbd9;.box-sizing();.border-radius(4px);color:#1f2d3d;
+  }
+  .button_row{float:left;margin-left:10/16rem;position:relative;
+    /*choose file input and button*/
+    .fileButtonShow{position:relative;z-index:1;}
+    .chooseFile{z-index:10;opacity:0;position:absolute;left:0;top:0;.widthRem(120);height:36px;.box-sizing();
+      &:hover{cursor:pointer;}
+    }
+    /*header button*/
+    button.headerButton{.widthRem(120);height:36px;line-height:36px;border:none;.border-radius(4px);text-align:center;background:#13b5b1;color:#fff;
+      &:active{outline:none;}
+      &:hover{cursor:pointer;}
+    }
+  }
+}
+.gh-buttonGroup{/*1582*/
+  width:100%;margin:0 0 20/16rem 0;
+  button{.border-radius(15px);float:right;display:table-cell;vertical-align:middle;position:relative;}
+  button:nth-of-type(1){.marginLeft(20,1582);
+    &:before{content:url('../assets/img/schManagementSystem/baseSettings/userManager/teacher/icon_reload.png');width:1rem;height:1rem;position:relative;top:2px;margin-right:2px;}
+  }
+  button:nth-of-type(2){
+    &:before{content:url('../assets/img/schManagementSystem/baseSettings/userManager/teacher/icon_search.png');width:1rem;height:1rem;position:relative;top:2px;margin-right:2px;}
+  }
+  button.uploadButton{
+    &:before{content:url('../assets/img/schManagementSystem/baseSettings/userManager/teacher/icon_upload.png');width:1rem;height:1rem;position:relative;top:2px;margin-right:2px;}
+  }
+}
+/*提示信息*/
+.g-prompt{.fontSize(14);color:@promptColor;text-align:center;
+  span{color:@buttonActive;}
+}
+/*两部分，左边tree树【带模糊查询】右边table框*/
+.g-tree_content{
+  width:100%;.marginTop(30);
+  &>div{float:left;}
+  .g-sectionL{/*412*/
+    .width(412,1582);border:1px solid @borderColor;.border-radius(6/16rem);.box-sizing();
+    .gL-header{width:100%;border-bottom:1px solid @borderColor;.box-sizing();
+      h2{.width(376,412);margin:20/16rem 18/412*100% 14/16rem;font-size:1rem;color:@HColor;display:inline-block;}
+      .fuzzyInput{.width(376,412);margin:0 18/412*100% 20/16rem;}
+    }
+    .gL-section{
+      /*tree*/
+      .width(376,412);.NotLineheight(712);margin:20/16rem 0 0 18/412*100%;padding-bottom:14/16rem;.box-sizing();overflow-x:hidden;overflow-y:auto;position:relative;
+      .g-contactSearch{width:100%;.height(40-5);background:#dadada;position:relative;
+        img{.widthRem(15);position:absolute;top:13/16rem;left:28/16rem;}
+        input{text-indent:37/16rem;.width(268,304);.marginLeft(18,304);border:1px solid @borderColor;.box-sizing();.border-radius(28/2/16rem);font-size:14/16rem;.height(28);color:#282828;background:#fff;
+          &:focus{outline:none;}
+        }
+      }
+      ul.g-contactCon{width:100%;.NotLineheight(580-56-40);overflow-x:hidden;overflow-y:auto;
+        li.g-contactRow{width:100%;.NotLineheight(64);
+          .g-contactImg{.width(44,304);.height(64);.marginLeft(22,304);float:left;
+            img{.widthRem(44);}
+          }
+          .g-contactMsg{float:left;.width(216,304);height:100%;.marginLeft(10,304);border-bottom:1px solid @borderColor;.box-sizing();
+            p{.width(200,216);.marginLeft(16,216);.NotLineheight(25);font-size:15/16rem;}
+            .s-contactText{.marginTop(14);color:#979797;}
+            .s-contactPhone{color:#3c3c3c;}
+          }
+        }
+      }
+    }
+  }
+  .g-sectionR{/*1142*/
+    .width(1142,1582);.marginLeft(20,1582);
+    &>header{width:100%;border:1px solid @elementUiBorder;.box-sizing();
+      h2{width:100%;font-size:1rem;color:@HColor;.height(50);.marginLeft(20,1142);}
+    }
+    .g-timeSettingTable{
+      span{display:inline-block;.height(75);width:100%;.border-radius(10/16rem);}
+      .NotCourse{background:@intervalColor;color:@normalColor;}
+      .SetNotCourse{background:@green;color:#fff;}
+    }
+  }
+}
+
+/*三部分 左边为li中间为tree，右边为table框*/
+.g-threePart{
+  width:100%;.marginTop(30);
+  &>div{float:left;}
+  .g-sectionL{/*358*/
+    .width(358,1582);border:1px solid @borderColor;.border-radius(6/16rem);.box-sizing();
+    .gL-header{width:100%;border-bottom:1px solid @borderColor;.box-sizing();
+      h2{.width(206,230);margin:20/16rem 18/230*100% 14/16rem;font-size:1rem;color:@HColor;display:inline-block;}
+      .fuzzyInput{.width(206,230);margin:0 18/230*100% 20/16rem;}
+    }
+    .gL-section{/*230*/
+      /*tree*/
+      .width(206,230);.height(712);margin:20/16rem 0 0 12/230*100%;padding-bottom:14/16rem;.box-sizing();overflow-x:hidden;overflow-y:auto;
+      &>ul{width:100%;
+        li:not(:last-of-type){.marginBottom(15);}
+        &>li{width:100%;.fontSize(14);.height(28);text-align:center;.border-radius(14/16rem);
+          &:hover{cursor:pointer;}
+        }
+        li.activeLi{color:#fff;background:@backgroundBlue;}
+        li.NormalLi{color:@normalColor;background:none;}
+      }
+    }
+  }
+  .g-sectionC{/*592*/
+    .width(592,1582);.marginLeft(20,1582);border:1px solid @borderColor;.border-radius(6/16rem);.box-sizing();
+    .gL-header{width:100%;border-bottom:1px solid @borderColor;.box-sizing();
+      h2{.width(376,412);margin:20/16rem 18/412*100% 14/16rem;font-size:1rem;color:@HColor;display:inline-block;}
+      .fuzzyInput{.width(376,412);margin:0 18/412*100% 20/16rem;}
+    }
+    .gL-section{
+      /*tree*/
+      .width(376,412);.height(712);margin:20/16rem 0 0 18/412*100%;padding-bottom:14/16rem;.box-sizing();overflow-x:hidden;overflow-y:auto;
+      .g-contactSearch{width:100%;.height(40-5);background:#dadada;position:relative;
+        img{.widthRem(15);position:absolute;top:13/16rem;left:28/16rem;}
+        input{text-indent:37/16rem;.width(268,304);.marginLeft(18,304);border:1px solid @borderColor;.box-sizing();.border-radius(28/2/16rem);font-size:14/16rem;.height(28);color:#282828;background:#fff;
+          &:focus{outline:none;}
+        }
+      }
+      ul.g-contactCon{width:100%;.NotLineheight(580-56-40);overflow-x:hidden;overflow-y:auto;
+        li.g-contactRow{width:100%;.NotLineheight(64);
+          .g-contactImg{.width(44,304);.height(64);.marginLeft(22,304);float:left;
+            img{.widthRem(44);}
+          }
+          .g-contactMsg{float:left;.width(216,304);height:100%;.marginLeft(10,304);border-bottom:1px solid @borderColor;.box-sizing();
+            p{.width(200,216);.marginLeft(16,216);.NotLineheight(25);font-size:15/16rem;}
+            .s-contactText{.marginTop(14);color:#979797;}
+            .s-contactPhone{color:#3c3c3c;}
+          }
+        }
+      }
+    }
+  }
+  .g-sectionR{/*592*/
+    .width(592,1582);.marginLeft(20,1582);
+    &>header{width:100%;border:1px solid @elementUiBorder;.box-sizing();
+      h2{width:100%;font-size:1rem;color:@HColor;.height(50);.marginLeft(20,1142);}
+    }
+    .g-timeSettingTable{
+      span{display:inline-block;.height(75);width:100%;.border-radius(10/16rem);}
+      .NotCourse{background:@intervalColor;color:@normalColor;}
+      .SetNotCourse{background:@green;color:#fff;}
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

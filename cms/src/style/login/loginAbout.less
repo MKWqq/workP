@@ -1,0 +1,22 @@
+.width(@width,@parentWidth){width:(@width/@parentWidth)*100%;}
+.height(@height,@parentHeight){height:(@height/@parentHeight)*100%;}
+.middle(@marginTop,@parentWidth){margin-top:(@marginTop/@parentWidth)*100%;}
+.center(@marginLeft,@parentWidth){margin-left:(@marginLeft/@parentWidth)*100%;}
+#loginAbout{.width(440,1732);height:362px;margin-top:120px;.center(682,1732);text-align:center;
+  .loginSignMsg{width:100%;height:70px;
+    div{font-size:24px;float:left;.width(220,440);height:100%;color:#fff;text-align:left;}
+    .signMsgName{}
+    .signMsgValue{
+      &:before{content:":";color:#fff;margin-right:(25/220)*100%;}
+    }
+  }
+  .returnSuccess{display:block;box-sizing:border-box;padding-top:(3/440)*100%;.width(115,440);height:34px;line-height:28px;border-radius:4px;margin-top:48px;.center(142.5,440);text-align:center;text-decoration:none;background:#0ea4b7;color:#fff;
+    &:hover{background:#1995a6;cursor:pointer;}
+  }
+}
+
+
+
+
+
+

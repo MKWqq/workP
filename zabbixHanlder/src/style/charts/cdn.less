@@ -1,0 +1,112 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+.rotate(@value){-moz-transform:rotate(@value);-ms-transform:rotate(@value);-o-transform:rotate(@value);-webkit-transform:rotate(@value);transform:rotate(@value);}
+.Content{@winWidth:1920px;
+  width:100%;height:833px;
+  .ContentTop{@inputHeight:28px;position:relative;
+    .box-sizing(border-box);width:(@winWidth)-64px;margin:0 32px;height:74px;background:url("../../assets/img/cdn_fengexian.png") no-repeat center bottom;
+    .ContentInputRow{
+      height:@inputHeight;margin-left:10px;margin-top:26px;margin-bottom:12px;float:left;
+      .dateInput{width:234px;height:26px;
+        border-radius:4px;border:1px solid #bfcbd9;
+      }
+      span{margin-right:12px;font-size:14px;height:@inputHeight;line-height:@inputHeight;color:#4a4a4a;display:inline-block;}
+      input,div.selectContainer{@inputWidth:234px;
+        .box-sizing(border-box);width:@inputWidth;height:@inputHeight;text-indent:14px;border:1px solid #c2c2c2;border-radius:(@inputHeight)/2;font-size:14px;color:#4a4a4a;
+        &:focus{outline:none;}
+      }
+      div.selectContainer{@inputWidth:234px;float:right;
+        select{width:(@inputWidth)-28px;height:@inputHeight;border:none;background:none;
+          &:focus{outline:none;}
+        }
+      }
+    }
+    .searchButton{float:left;height:@inputHeight;margin:26px 0 12px 32px;width:85px;
+      button.searchButton{.box-sizing(border-box);margin:0;border-radius:(@inputHeight)/2;width:100%;height:@inputHeight;line-height:1px;font-size:14px;color:#fff;text-align:center;background:#448aca;border:1px solid transparent;
+        &:focus{outline:none;}
+        &:hover{cursor:pointer;}
+      }
+    }
+  }
+  .ContentBottom{width:(@winWidth)-40px;margin:0 40px 0;.box-sizing(border-box);height:731px;
+    #chartsContainer{width:1204+51-40px;height:100%;float:left;}
+    .chartsDescription{width:665px;float:left;height:731px;
+      .DescriptionT{width:665-20px;height:731-61-10px;margin-bottom:10px;overflow:auto;
+        table{width:665-20-20-20px;margin-left:20px;border-collapse:collapse;
+          tr:nth-of-type(1){}
+          tr{width:100%;
+            th{text-align:left;height:60px;font-size:15px;color:#4a4a4a;}
+            td{height:40px;font-size:13px;color:#525252;
+              &.NoData{color:#fb5050;}
+              &.NoUpdate{color:#f68603;}
+            }
+            td:nth-of-type(1),th:nth-of-type(1){width:82px;}
+            td:nth-of-type(2),th:nth-of-type(2){width:228px;}
+            td:nth-of-type(3),th:nth-of-type(3){width:139px;}
+            td:nth-of-type(4),th:nth-of-type(4){width:156px;}
+          }
+        }
+      }
+      .DescriptionB{width:633px;height:61px;border-top:1px solid #c9c9c9;.box-sizing(border-box);
+        div{float:left;margin-top:19px;font-size:13px;color:#4a4a4a;}
+        .DescriptionBL{margin-left:182px;
+          &:before{content:"";display:inline-block;width:11px;height:11px;margin-right:10px;background:#f68603;}
+        }
+        .DescriptionBR{margin-left:47px;
+          &:before{content:"";display:inline-block;width:11px;height:11px;margin-right:10px;background:#fb5050;}
+        }
+      }
+    }
+  }
+  .dataExport{width:100%;height:100%;background:rgba(0,0,0,.4);position:fixed;left:0;top:0;
+    .dataExportContainer{width:416px;height:313px;background:#fff;margin:324px auto;position:relative;
+      .dataExportHeader{width:416-24px;height:61-40px;display:inline-block;margin:20px 0 20px 24px;
+        h1{font-size:22px;color:#3e3e3e;}
+        img{position:absolute;right:16px;top:26px;
+          &:hover{cursor:pointer;}
+        }
+      }
+      .dataExportContent{width:416-84-84px;height:174-40px;margin:20px 84px 38px;
+        .block{width:100%;height:104px/2;
+          .demonstration{display:block;width:100%;height:23px;font-size:14px;color:#3e3e3e;}
+          .dateInput{width:100%;height:26px;
+            border-radius:4px;border:1px solid #bfcbd9;
+          }
+        }
+        .block:nth-of-type(2){margin-top:30px;}
+      }
+      .dataExportFooter{height:78-18-32px;width:416-97-97px;margin:18px 97px 32px;
+        a.ExportExcelButton{text-decoration:none;line-height:28px;}
+        button,.ExportExcelButton{float:left;display:block;width:96px;height:28px;line-height:0;font-size:14px;border:1px solid #b5b5b5;color:#4a4a4a;border-radius:4px;text-align:center;.box-sizing(border-box);
+          &:hover{color:#448aca;border-color:#448aca;}
+          &:active{color:#fff;background:#448aca;border:none;}
+        }
+        button:nth-of-type(1){}
+        button:last-of-type{margin-left:28px;}
+      }
+    }
+  }
+  .ScanChart{width:100%;height:100%;background:rgba(0,0,0,.4);position:fixed;left:0;top:0;
+    .ScanChartContainer{width:1022px;height:600px;background:#fff;margin:178px auto;
+      .ScanChartHeader{width:1022-24px;margin-left:24px;height:64px;position:relative;
+        h1{margin:20px 0;width:100%;font-size:24px;color:#3e3e3e;display:inline-block;}
+        .ScanExportButton{width:100px;height:28px;line-height:28px;top:36px;right:74px;border-radius:4px;border:1px solid #c9c9c9;font-size:14px;position:absolute;color:#5c5c5c;text-align:center;text-decoration:none;.box-sizing(border-box);
+          &:hover{color:#448aca;border-color:#448aca;}
+          &:active{color:#fff;background:#448aca;border:none;}
+        }
+        img{position:absolute;right:16px;top:16px;
+          &:hover{cursor:pointer;}
+        }
+      }
+      #ScanCharts{width:928+40px;height:536px;}
+    }
+  }
+}
+
+
+
+
+
+
+
+

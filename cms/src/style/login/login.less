@@ -1,0 +1,48 @@
+*{color:red;font-size:16px;font-family:"微软雅黑";list-style:none;}
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+.percent(@property,@value,@parentValue){@property:(@value/@parentValue)*100%}
+.width(@width,@parentWidth){width:(@width/@parentWidth)*100%;}
+.height(@height,@parentHeight){height:(@height/@parentHeight)*100%;}
+.middle(@marginTop,@parentWidth){margin-top:(@marginTop/@parentWidth)*100%;}
+.center(@marginLeft,@parentWidth){margin-left:(@marginLeft/@parentWidth)*100%;}
+.color{color:#fff;}
+.float{float:left;}
+#loginTotal{width:100%;height:100%;background:url("../../assets/img/sign_in/home_bg.png") no-repeat 0 0;background-size:cover;//设置背景图片
+  #loginHeader{
+    width:100%;height:60px;background:rgba(0,0,0,.4);//设置遮罩层宽度为100%
+    .lgnHdrMain{@border:1px solid #5d5d5d;
+      .width(1732,1920);height:60px;position:relative;left:4.4%;//主题内容的宽不为100%
+      /*选择性添加=========================*/
+      &.HeaderMain_line{border-bottom:@border;height:60px;}//当遮罩层高为屏幕高时添加此class
+      .loginDate{.color;.float;margin-left:50/1732*100%;height:60px;line-height:60px;}
+      .loginTime{.color;.float;margin-left:28/1732*100%;height:60px;line-height:60px;}
+      .userMsg{position:absolute;left:340/1732*100%;.width(200,1732);
+        img{width:17px;display:inline-block;.middle(21.5,200);}
+        span{color:#00bcd4;.center(20,200);.middle(20,200);position:absolute;display:inline-block;}
+      }
+      .loginRgt{float:right;.width(724,1732);//ul
+        &>a,div{text-decoration:none;float:right;.color;.width(240,724);text-align:center;.middle(18,724);}
+        &>a{border-right:1px solid #fff;}
+        .changePwd{}
+        .backLogin{
+          &:hover{cursor:pointer;}
+        }
+        .loginAbt{}
+      }
+    }
+  }
+  #loginMain{.width(1732,1920);position:absolute;top:(60/1080)*100%;left:4.4%;height:1020px;text-align:center;
+    .loginContent{.middle(46,1020);.width(952,1732);display:inline-block;
+      img{width:90%;}
+    }
+    .loginMsg{margin-top:40px;/*.center(620,1732);*/font-size:36px;.color;}
+  }
+}
+
+
+
+
+
+
+

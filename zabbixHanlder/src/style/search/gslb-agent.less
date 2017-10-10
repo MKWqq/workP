@@ -1,0 +1,109 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+.rotate(@value){-moz-transform:rotate(@value);-ms-transform:rotate(@value);-o-transform:rotate(@value);-webkit-transform:rotate(@value);transform:rotate(@value);}
+.Content{@winWidth:1920px;
+  width:100%;height:833px;
+  .ContentTop{@inputHeight:28px;
+    .box-sizing(border-box);position:relative;width:(@winWidth)-64px;margin:0 32px;height:66px;border-bottom:1px solid #c9c9c9;
+    .ContentInputRow{
+      height:@inputHeight;margin-left:11px;margin-top:26px;margin-bottom:12px;float:left;
+      span{margin-right:12px;font-size:14px;height:@inputHeight;line-height:@inputHeight;color:#4a4a4a;display:inline-block;}
+      input,div.selectContainer{@inputWidth:234px;
+        .box-sizing(border-box);width:@inputWidth;height:@inputHeight;text-indent:14px;border:1px solid #c2c2c2;border-radius:(@inputHeight)/2;font-size:14px;color:#4a4a4a;
+        &:focus{outline:none;}
+      }
+      div.selectContainer{@inputWidth:234px;float:right;
+        select{width:(@inputWidth)-28px;height:@inputHeight;border:none;background:none;
+          &:focus{outline:none;}
+        }
+      }
+    }
+    .searchButton{float:left;height:@inputHeight;margin:26px 0 12px 32px;width:85px;
+      button.searchButton{.box-sizing(border-box);margin:0;border-radius:(@inputHeight)/2;width:100%;height:@inputHeight;line-height:1px;font-size:14px;color:#fff;text-align:center;background:#448aca;border:1px solid transparent;
+        &:focus{outline:none;}
+        &:hover{cursor:pointer;}
+      }
+    }
+  }
+  .ContentBottom{width:(@winWidth)-64px;margin:0 32px 0;position:relative;.box-sizing(border-box);height:663px;border-bottom:1px solid #c9c9c9;
+    table{width:100%;border-collapse:collapse;table-layout:fixed;
+      tr{width:100%;
+        th,td{color:#4a4a4a;}
+        th{height:66px;font-size:14px;text-align:left;}
+        td{height:50px;font-size:13px;}
+        tr:nth-child(even){background:#e6e6e6;}
+        th:nth-of-type(1),td:nth-of-type(1){text-indent:56px;width:128px;}
+        th:nth-of-type(2),td:nth-of-type(2){width:148px;}
+        th:nth-of-type(3),td:nth-of-type(3){width:177px;}
+        th:nth-of-type(4),td:nth-of-type(4){width:174px;}
+        th:nth-of-type(5),td:nth-of-type(5){width:220+168px;
+          span{display:inline-block;height:19px;width:170px;padding-right:50px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+            &:hover{cursor:pointer;}
+          }
+        }
+        th:nth-of-type(6),td:nth-of-type(6){width:193px;}
+        th:nth-of-type(7),td:nth-of-type(7){width:229px;}
+        th:nth-of-type(9),td:nth-of-type(9){width:198px;}
+        th:nth-of-type(10),td:nth-of-type(10){width:165px;}
+      }
+    }
+    .tokenDetailContainer{position:absolute;top:0;left:715px;height:50px;padding-right:54px;background:#fff;.box-shadow(0 5px 10px 2px rgba(0,0,0,.3));
+      .tokenDetail{font-size:13px;color:#4a4a4a;text-indent:16px;height:100%;line-height:50px;}
+      img{position:absolute;right:8px;top:8px;
+        &:hover{cursor:pointer;}
+      }
+    }
+  }
+  .ContentButton{}
+  .dataExport{width:100%;height:100%;background:rgba(0,0,0,.4);position:fixed;left:0;top:0;
+    .dataExportContainer{width:416px;height:313px;background:#fff;margin:324px auto;position:relative;
+      .dataExportHeader{width:416-24px;height:61-40px;display:inline-block;margin:20px 0 20px 24px;
+        h1{font-size:22px;color:#3e3e3e;}
+        img{position:absolute;right:16px;top:26px;
+          &:hover{cursor:pointer;}
+        }
+      }
+      .dataExportContent{width:416-84-84px;height:174-40px;margin:20px 84px 38px;
+        .block{width:100%;height:104px/2;
+          .demonstration{display:block;width:100%;height:23px;font-size:14px;color:#3e3e3e;}
+          .dateInput{width:100%;height:29px;.box-sizing(border-box);}
+        }
+        .block:nth-of-type(2){margin-top:30px;}
+      }
+      .dataExportFooter{height:78-18-32px;width:416-97-97px;margin:18px 97px 32px;
+        a.ExportExcelButton{text-decoration:none;line-height:28px;}
+        button,.ExportExcelButton{float:left;display:block;width:96px;height:28px;line-height:0;font-size:14px;border:1px solid #b5b5b5;color:#4a4a4a;border-radius:4px;text-align:center;.box-sizing(border-box);
+          &:hover{color:#448aca;border-color:#448aca;}
+          &:active{color:#fff;background:#448aca;border:none;}
+        }
+        button:nth-of-type(1){}
+        a:last-of-type{margin-left:28px;}
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

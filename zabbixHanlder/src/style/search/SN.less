@@ -1,0 +1,83 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+.rotate(@value){-moz-transform:rotate(@value);-ms-transform:rotate(@value);-o-transform:rotate(@value);-webkit-transform:rotate(@value);transform:rotate(@value);}
+.SNContent{@winWidth:1920px;
+  width:100%;height:833px;
+  .SNContentTop{@inputHeight:28px;
+    .box-sizing(border-box);width:(@winWidth)-64px;margin:0 32px;height:66px;border-bottom:1px solid #c9c9c9;
+    .SNContentInputRow:not(:nth-of-type(1)){margin-left:46px;}
+    .SNContentInputRow:nth-of-type(1){margin-left:10px;}
+    .SNContentInputRow{
+      height:@inputHeight;margin-top:26px;margin-bottom:12px;float:left;
+      span{margin-right:12px;font-size:14px;height:@inputHeight;line-height:@inputHeight;color:#4a4a4a;display:inline-block;}
+      input,div.selectContainer{@inputWidth:234px;
+        .box-sizing(border-box);width:@inputWidth;height:@inputHeight;text-indent:14px;border:1px solid #c2c2c2;border-radius:(@inputHeight)/2;font-size:14px;color:#4a4a4a;
+        &:focus{outline:none;}
+      }
+      div.selectContainer{@inputWidth:234px;float:right;
+        select{width:(@inputWidth)-28px;height:@inputHeight;border:none;background:none;
+          &:focus{outline:none;}
+        }
+      }
+    }
+    .searchButton{float:left;height:@inputHeight;margin:26px 0 12px 32px;width:85px;
+      button.searchButton{.box-sizing(border-box);margin:0;border-radius:(@inputHeight)/2;width:100%;height:@inputHeight;line-height:1px;font-size:14px;color:#fff;text-align:center;background:#448aca;border:1px solid transparent;
+        &:focus{outline:none;}
+        &:hover{cursor:pointer;}
+      }
+    }
+  }
+  .SNContentBottom{width:(@winWidth)-64px;margin:0 32px 0;.box-sizing(border-box);height:663px;border-bottom:1px solid #c9c9c9;
+    table{width:(@winWidth)-64px;table-layout:fixed;
+      tr:nth-child(even){background:#e6e6e6;}
+      tr{width:100%;
+        td{height:50px;font-size:13px;color:#464646;}
+        th{height:66px;font-size:15px;color:#4a4a4a;text-align:left;}
+        th:nth-of-type(1),td:nth-of-type(1){text-indent:21px;}
+      }
+      tr{
+        td{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        td:last-child{color:#448aca;}
+        td:nth-of-type(1),th:nth-of-type(1){width:112px;}
+        td:nth-of-type(2),th:nth-of-type(2){width:141px;}
+        td:nth-of-type(3),th:nth-of-type(3){width:146px;}
+        td:nth-of-type(4),th:nth-of-type(4){width:161px;}
+        td:nth-of-type(5),th:nth-of-type(5){width:151px;}
+        td:nth-of-type(6),th:nth-of-type(6){width:156px;}
+        td:nth-of-type(7),th:nth-of-type(7){width:128px;padding-right:70px;}
+        td:nth-of-type(8),th:nth-of-type(8){width:189px;}
+        td:nth-of-type(9),th:nth-of-type(9){width:208px;}
+        td:nth-of-type(10),th:nth-of-type(10){width:128px;}
+        td:nth-of-type(11),th:nth-of-type(11){width:161px;}
+        td:nth-of-type(12),th:nth-of-type(12){width:84px;
+          &:hover{cursor:pointer;}
+        }
+      }
+    }
+  }
+  .promptError{color:#ff4a4a;width:100%;text-align:center;font-size:16px;margin-top:16px;}
+  .SNContentButton{}
+  .DetailContainer{width:100%;height:100%;background:rgba(0,0,0,0.4);position:fixed;left:0;top:0;
+    .DetailContent{width:1116px;height:748px;position:relative;background:#fff;margin:104px 402px;
+      table{width:1066px;margin:0 25px;border-collapse:collapse;
+        tr:nth-of-type(1){height:50px;border-bottom:1px solid #c9c9c9;.box-sizing(border-box);}
+        tr{width:100%;height:40px;
+          th{height:50px;font-size:18px;text-align:left;font-weight:bold;color:#323232;}
+          td{height:40px;font-size:13px;color:#404040;}
+          td:nth-of-type(1),th:nth-of-type(1){text-indent:37px;width:376px;}
+          td:nth-of-type(2),th:nth-of-type(2){width:653px;}
+        }
+      }
+      .closeDetail{position:absolute;right:16px;top:16px;
+        &:hover{cursor:pointer;}
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

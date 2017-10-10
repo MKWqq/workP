@@ -1,0 +1,126 @@
+@import './../common.less';
+.examChart{/*1582*/
+  width:100%;
+  .g-examHeader{.width(1582,1646);margin:0 32/1646*100%;border-bottom:1px solid @borderColor;.box-sizing();
+    .g-gobackChart{float:left;.marginRight(20,1582);.marginTop(10);display:inline-block;}
+    h2{color:@HColor;font-size:20/16rem;float:left;margin:15/16rem 0;}
+    h2.activeFont{color:@buttonActive;margin-left:4/16rem;
+      &:before{content:'';.widthRem(20);border:1/16rem solid @intervalColor;margin-left:8/16rem;margin-right:4/16rem;}
+    }
+  }
+  .g-examSection{/*1582*/
+    .width(1582,1646);margin:100/16rem 32/1646*100% 60/16rem;
+    .g-row{.flex();}
+    .clear_fix:before{content:'';display:table;}
+  }
+  /*examinationChart col*/
+  /*最后一列列宽为240，其他为324*/
+  .g-col_1x{.width(324,1582);}
+  .g-col_2x{.width(324*2,1582);}
+  .g-col_3x{.width(324*3,1582);}/*3倍列宽*/
+  .g-col_2_last{.width(324+240,1582);}/*一列宽加最后一列的列宽*/
+  .g-col_last{.width(240,1582);}/*第五列距离*/
+  .g-col-con{.width(240,324);}
+  /*examinationChart content*/
+  /*less定义*/
+  /*定义button的公共样式，定义background颜色不同，通过传参即可*/
+  .column_content(@color:#fff){.g-col-con;.height(40);.border-radius(20/16rem);background:@color;font-size:14/16rem;color:#fff;text-align:center;display:block;text-decoration:none;}
+  /*线条样式-----*/
+  /*left*/
+  .left_line('bdlt',@lineWidth,@lineHeight:0){
+    .width((@lineWidth+8),324);position:absolute;left:-((@lineWidth)+8+20)/324*100%;top:20/16rem;
+    .g-column_left_line_row{.width(@lineWidth,(@lineWidth+8));.height(@lineHeight);.box-sizing();border-left:2/16rem solid @backgroundBlue;border-top:2/16rem solid @backgroundBlue;}
+    .g-column_left_arrow_row{.width(8,(@lineWidth+8));position:relative;
+      img{position:relative;top:-9/16rem;.widthRem(8);}
+    }
+  }
+  .left_line('bdlb',@lineWidth,@lineHeight:0){
+    .width((@lineWidth)+8,324);position:absolute;left:-((@lineWidth)+8+20)/324*100%;top:-((@lineHeight)-20)/16rem;
+    .g-column_left_line_row{.width(@lineWidth,(@lineWidth)+8);.height(@lineHeight);.box-sizing();border-left:2/16rem solid @backgroundBlue;border-bottom:2/16rem solid @backgroundBlue;}
+    .g-column_left_arrow_row{.width(8,(@lineWidth)+8);position:relative;top:((@lineHeight)-11)/16rem;
+      img{position:relative;.widthRem(8);}
+    }
+  }
+  /*right*/
+  .right_line('bdrt',@lineWidth,@lineHeight:0){
+    .width(@lineWidth,324);position:absolute;left:260/324*100%;top:20/16rem;
+    .g-column_right_line_row{width:100%;.height(@lineHeight);.box-sizing();border-top:2/16rem solid @backgroundBlue;border-right:2/16rem solid @backgroundBlue;}
+    .g-column_right_arrow_row{.width(8,@lineWidth);.marginLeft((@lineWidth)-5,@lineWidth);.marginTop(-6);
+      img{}
+    }
+  }
+  .right_line('bdrb',@lineWidth,@lineHeight:0,@borderColor){
+    .width(@lineWidth,324);position:absolute;left:260/324*100%;top:20/16rem;
+    .g-column_right_line_row{width:100%;.height(@lineHeight);.box-sizing();border-bottom:2/16rem solid @borderColor;border-right:2/16rem solid @borderColor;}
+    .g-column_right_arrow_row{.width(8,@lineWidth);position:absolute;top:-0.9rem;right:0;
+      img{.widthRem(14);}
+    }
+  }
+  .right_line('bdr',@lineWidth,@lineHeight:0){
+    .width((@lineWidth)+8,324);position:absolute;left:260/324*100%;top:20/16rem;
+    .g-column_right_line_row{.width(@lineWidth,(@lineWidth)+8);.box-sizing();border-top:2/16rem solid @backgroundBlue;}
+    .g-column_right_arrow_row{.width(8,(@lineWidth)+8);position:relative;
+      img{position:relative;top:-9/16rem;.widthRem(8);}
+    }
+  }
+  .moreButton(@borderColor,@mineMargin){
+    position:relative;.marginTop(@mineMargin);
+    border: 1px solid @borderColor;.g-col-con;.border-radius(20/16rem);
+    .g-column_con_blue{width:100%;}
+    .g-column_con_green{width:100%;}
+    .g-column_con_blue:not(:last-of-type){margin-bottom:20/16rem;}
+    .g-column_con_green:not(:last-of-type){margin-bottom:20/16rem;}
+  }
+  /*css*/
+  .g-column_container{/*324*/
+    width:100%;position:relative;/*common*/
+    /*含文本行-----*/
+    .g-column_con_blue_more{
+      /*多个a标签的容器*/
+      .moreButton(@backgroundBlue,-35);
+    }
+    .g-column_con_green_more{.moreButton(@green,0);}
+    /*a——单行a标签式button*/
+    a[class^='g-column_con']{
+      &:hover{cursor:pointer;}
+    }
+    .g-column_con_blue{.column_content(@backgroundBlue);}
+    .g-column_con_green{.column_content(@green);}
+    /*左边箭头*/
+    /*common*/
+    .g_flex{.flex();}
+    img.column_img{.widthRem(8);.transformRotate(90deg);}
+    img.columnTop{.widthRem(8);.transformRotate(-90deg);}
+    /*row1_564*/
+    .g-column_left_row1{
+      .left_line('bdlt',505,50)
+    }
+    /*右边箭头*/
+    /*row1*/
+    .g-column_right_row1{
+      .right_line('bdrt',185,80);
+    }
+    .g-column_right_row2{
+      .right_line('bdr',39);
+    }
+    .g-column_right_row3{
+      .right_line('bdrb',190,222,@green);
+    }
+    .g-column_left_row3{
+      .left_line('bdlb',250,108)
+    }
+    .hasMoreA_blue{top:55/16rem;}
+    .hasMoreA_green{top:-80/16rem;}
+    /*箭头行-----*/
+    .g-column_line_con{/*240*/
+      .g-col-con;
+      .g-column_line{/*display:inline-block;*/width:50%;.height(38);.box-sizing();border-right: 2/16rem solid @backgroundBlue;.marginTop(20);}
+      .g-column_img{.width(8,240);position:relative;top:-6/16rem;left:(120-5)/240*100%;
+        img{}
+      }
+    }
+  }
+}
+
+
+

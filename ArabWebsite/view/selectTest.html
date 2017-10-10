@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selectTest</title>
+    <style>
+        /*#mytextarea{border:1px solid red;height:100px;}*/
+        .parent{width:100px;height:100px;border:1px solid red;}
+        .child{width:30px;height:100px;border:1px solid green;}
+        .parent>.child>div:not(:first-child){color:yellow;}
+        #mydiv{margin-left:300px;margin-top:300px;width:10px;overflow:auto;
+            height:100px;border:1px solid red;word-break:break-all;}
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="child">
+        <div>11111</div>
+        <div>22222</div>
+    </div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+<div style="direction: rtl; unicode-bidi: bidi-override; ">
+    <span style="direction: rtl; unicode-bidi:normal; ">over...</span>
+    <span style="direction: rtl; unicode-bidi:normal; ">ride</span>
+</div>
+<div onscroll="document.getElementById('f').style.top=this.scrollTop+'px'" style="height:80px;width:100px;overflow:auto;border:1px solid #000;">
+    1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>
+    1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>
+    <div id="f" style="height:10px;width:10px;background:red;position:absolute;top:0"></div>
+</div>
+<div id="mydiv" style="">1234567899</div>
+<script type="text/javascript" src="../js/frameJs/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    $("#mydiv").on("scroll",function(event){
+        console.log(event);
+        console.info(this.scrollTop)
+    });
+</script>
+<!--<select>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+</select>-->
+</body>
+</html>

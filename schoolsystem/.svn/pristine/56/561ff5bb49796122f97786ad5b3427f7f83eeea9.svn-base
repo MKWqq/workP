@@ -1,0 +1,64 @@
+.width(@width,@widthParent){width:(@width)/@widthParent*100%;}
+.widthRem(@width){width:(@width)/16rem;}
+.height(@height:1){height:(@height)/16rem;line-height:(@height)/16rem;}
+.NotLineheight(@height:1){height:(@height)/16rem;}
+.marginLeft(@margin,@widthParent){margin-left:(@margin)/@widthParent*100%;}
+.marginRight(@margin,@widthParent){margin-right:(@margin)/@widthParent*100%;}
+.marginTop(@margin){margin-top:(@margin)/16rem;}
+.marginBottom(@margin){margin-bottom:(@margin)/16rem;}
+.fontSize(@fontSize){font-size:(@fontSize)/16rem;}
+.box-sizing(@boxSizing:border-box){-moz-box-sizing:@boxSizing;-ms-box-sizing:@boxSizing;-o-box-sizing:@boxSizing;-webkit-box-sizing:@boxSizing;box-sizing:@boxSizing;}
+.border-radius(@borderRadius){-moz-border-radius:@borderRadius;-ms-border-radius:@borderRadius;-o-border-radius:@borderRadius;-webkit-border-radius:@borderRadius;border-radius:@borderRadius;}
+.border-top-right-radius(@borderRadius){-webkit-border-top-right-radius:@borderRadius;border-top-right-radius:@borderRadius;}
+.border-top-left-radius(@borderRadius){-webkit-border-top-left-radius:@borderRadius;border-top-left-radius:@borderRadius;}
+.border-bottom-right-radius(@borderRadius){-webkit-border-bottom-right-radius:@borderRadius;border-bottom-right-radius:@borderRadius;}
+.border-bottom-left-radius(@borderRadius){-webkit-border-bottom-left-radius:@borderRadius;border-bottom-left-radius:@borderRadius;}
+.box-shadow(@boxShadow){box-shadow:@boxShadow;-moz-box-shadow:@boxShadow;-o-box-shadow:@boxShadow;-webkit-box-shadow:@boxShadow;-ms-box-shadow:@boxShadow;}
+.transformRotate(@angle){-webkit-transform: rotate(@angle);-moz-transform: rotate(@angle);-ms-transform: rotate(@angle);-o-transform: rotate(@angle);transform: rotate(@angle);}
+.transformTranslate(@x:0,@y:0){-webkit-transform: translate(@x,@y);-moz-transform: translate(@x,@y);-ms-transform: translate(@x,@y);-o-transform: translate(@x,@y);transform: translate(@x,@y);}
+
+/*activeButton*/
+.blueButton{background:@buttonActive;border-color:@buttonActive;color:#fff;-webkit-border-radius: 1rem;-moz-border-radius: 1rem;border-radius: 1rem;padding:0.5rem 1.225rem;}
+.RedButton{background:@buttonActiveR;border-color:@buttonActiveR;color:#fff;-webkit-border-radius: 1rem;-moz-border-radius: 1rem;border-radius: 1rem;padding:0.5rem 1.225rem;}
+.greenButton{background:@green;border-color:@green;color:#fff;-webkit-border-radius: 1rem;-moz-border-radius: 1rem;border-radius: 1rem;padding:0.5rem 1.225rem;}
+/*color*/
+@HColor:#282828;
+@normalColor:#666;
+@promptColor:#888;/*备注字体色*/
+@borderColor:#dcdcdc;/*边框线*/
+@intervalColor:#d2d2d2;/*分割线*/
+@backgroundGrad:#f0f0f0;/*背景色灰色*/
+@buttonActiveR:#ff5b5b;
+@green:#13b5b1;
+@backgroundBlue:#89bcf5;
+@backgroundBlueOpacity:#d7e8fc;
+@buttonActive:#4da1ff;/*activeBlue*/
+@elementUiBorder:#dfe6ec;
+@elementBorder:#bfcbd9;/*element-ui的border颜色*/
+@liColor:#f08bc5;//table框中li颜色
+
+/*1646*/
+/*flex*/
+.flex{display:flex;display:-webkit-flex;}
+/*多行垂直居中*/
+.middle{display:flex;display:-webkit-flex;justify-content:center;flex-wrap:wrap;align-content:center;}
+.One_middle{display:flex;display:-webkit-flex;align-items:center;}
+
+/*定义字体*/
+@font-face {
+  font-family:'icon_font';
+  src: url('../../static/font_1/iconfont.eot');
+  src: url('../../static/font_1/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../static/font_1/iconfont.woff') format('woff'),
+  url('../../static/font_1/iconfont.ttf') format('truetype'),
+  url('../../static/font_1/iconfont.svg#iconfont') format('svg');
+}
+.icon_goDown:before{content:'\e50c';font-family:'icon_font';font-size:0.9rem;color:#666;}
+.icon_goUp:before{content:'\e50e';font-family:'icon_font';font-size:0.9rem;color:#666;}
+.icon_shutDown:before{content:'\e62d';font-family:'icon_font';font-size:0.6rem;color:#666;}
+.icon_Add:before{content:'\e858';font-family:'icon_font';font-size:0.825rem;color:#666;}
+
+
+
+
+

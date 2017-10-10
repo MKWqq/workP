@@ -1,0 +1,429 @@
+<include file = 'shoppublic/shopheader'/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/vip.css">
+<style>
+    .class_classfiy{ display: none;}
+    .active_address_border{ border: 1px #e04141 solid;}
+    .no_select{ border: 1px #eeeeee solid;}
+    .con_zzjs_2_table_div{ text-align:left; line-height:40px;}
+    .con_zzjs_2_table_div textarea{ width:50%; height:100px;}
+</style>
+<!--vip-->
+	<div class="big_kuangjia">
+    	<div class="kuangjia shop_vip_class">
+            <ul>
+                <li class="active"><a href="<?php echo U('User/vip')?>">会员中心</a>
+                </li>
+                <li><a href="<?php echo U('Shopcar/index')?>">购物车</a>
+                </li>
+                <li > <a href="<?php echo U('Order/index')?>">订单中心</a>
+                </li>
+                <li><a href="<?php echo U('User/addcard')?>">vip会员卡充值</a>
+                </li>
+            <div class="clears"> </div>
+        </ul>
+            <div class="shop_vip_content1">
+            	<a href="#" id="cc1">个人资料</a>
+                <a href="#" id="cc2">收获地址</a>
+                <a href="#" id="cc3">修改密码</a>
+             </div>
+            <div class="shop_vip_content12" style="display:block;">
+                <div class="shop_vip_content2">
+            	<div class="fl vip_content2_div1" style="line-height: 0px;">
+                	<p style="margin-top:16px;"><span>昵称：<span id="userrelname"><?php echo $user['username']?></span>！</span></p>
+                    <p><a id="update_vip_ziliao" href="#">修改个人资料</a></p>
+                    <p><span>积分：<span id="userrelname"><?php echo $user['card_code']?></span></span></p>
+                </div>
+                <div class="fr vip_content2_div3">
+                	<ul>
+                    	<li><a href="<?php echo U('User/vip',array('class' => 0,'class1' => 0))?>">
+                        	<img src="__PUBLIC__/home/images/dai_pay.png" width="60" height="60">
+                            <p style="margin-top:12px; height:60px; position:relative;">
+                            	<span>代付款</span><span style=" color:#fff; font-size:12px;display:inline-block; height:14px; width:14px; background:url(__PUBLIC__/home/images/backred.png) no-repeat; position:absolute; top:-2px;">
+                                <?php echo $orderclass['nopay']?>
+                            </span>
+                            </p>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('User/vip',array('class' => 1,'class1' => 0))?>">
+                        	<img src="__PUBLIC__/home/images/dai_post.png" width="60" height="60">
+                            <p style="margin-top:12px; height:60px; position:relative;">
+                            	<span>代发货</span><span style=" color:#fff; font-size:12px;display:inline-block; height:14px; width:14px; background:url(__PUBLIC__/home/images/backred.png) no-repeat; position:absolute; top:-2px;">
+                                <?php echo $orderclass['nopost']?>
+                            </span>
+                            </p>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('User/vip',array('class' => 1,'class1' => 1))?>">
+                        	<img src="__PUBLIC__/home/images/dai_recive.png" width="60" height="60">
+                            <p style="margin-top:12px; height:60px; position:relative;">
+                            	<span>代收货</span><span style=" color:#fff; font-size:12px;display:inline-block; height:14px; width:14px; background:url(__PUBLIC__/home/images/backred.png) no-repeat; position:absolute; top:-2px;">
+                                <?php echo $orderclass['norecevie']?>
+                            </span>
+                            </p>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('User/vip',array('class' => 1,'class2' => 1))?>">
+                        	<img src="__PUBLIC__/home/images/dai_message.png" width="60" height="60">
+                            <p style="margin-top:12px; height:60px; position:relative;">
+                            	<span>代评论</span><span style=" color:#fff; font-size:12px;display:inline-block; height:16px; width:16px; background:url(__PUBLIC__/home/images/backred.png) no-repeat; position:absolute; top:-2px;">
+                                 <?php echo $orderclass['nocomment']?>
+                            </span>
+                            </p>
+                        </a>
+                        </li>
+                       <div class="clears"></div>
+                    </ul>
+                </div>
+                <div class="clears"></div>
+             </div>
+                <div class="vip_shop_content4">
+             	<span class="fl" style="font-size:14px; color:#333333; margin-left:6px; font-weight:600;">我的订单</span>
+                <div class="clears"></div>
+          	 </div>
+
+                <div class="vip_shop_content5">
+                    <?php foreach($order as $key => $value){?>
+                    <ul class="content2_ul">
+                        <p><?php echo $value['time']?>  </p>
+                        <li class="li1" style="text-align: left; width: 220px; margin-left: 100px;">
+                            <img src="<?php echo $value['product']['productlogo']?>" width="60" height="60" style="border:1px #d3d3d3 solid;">
+                    <span class="pay_order_name" valuename = "<?php echo $value['product']['productname']?>">
+                        <?php
+                	  if(mb_strlen($value['product']['productname'],'utf-8')>8){echo mb_substr($value['product']['productname'],0,8,'utf-8').'......';}else{ echo  mb_substr($value['product']['productname'],0,8,'utf-8'); }
+                	?>
+                    </span>
+                        </li>
+                        <li class="li2"> <?php echo $value['address']['receivename'] ?></li>
+                        <li class="li3">
+                            <table>
+                                <tr>
+                                    <td><b>￥<span class="product_one_price"><?php echo $value['product']['productprice']?></span></b></td>
+                                </tr>
+                                <tr>
+                                    <td>在线支付</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="li4"><span class="product_one_num"><?php echo $value['productnum']?></span></li>
+                        <li class="li5">
+                            <table>
+                                <tr>
+                                    <?php if($value['pay'] == 0||$value['post'] == 2){?>
+                                    <td><a class="quexiaoorder" id="<?php echo $value['ordersallid']?>" href="javascript:;">删除订单</a></td>
+                                    <?php } ?>
+                                </tr>
+                                <tr>
+                                    <?php if($value['pay'] == 0){?>
+                                    <td class="table_tr_td_active">
+                                        <a href="javascript:;">
+                                        未付款
+                                        </a>
+                                    </td>
+                                    <?php }?>
+                                </tr>
+                                <tr>
+                                        <?php if($value['post'] == 0&&$value['pay'] ==1){?>
+                                        <td> <a  href="javascript:;"> 未发货</a>
+                                        </td>
+                                        <?php }?>
+                                        <?php if($value['post'] == 1||$value['post'] == 2){?>
+                                         <td class="table_tr_td_active">
+                                        <a class="post_wuliu" postcom ="<?php echo $value['emailcom']?>" postid = "<?php echo $value['emailnumber']?>" href="javascript:;">物流追踪</a>
+                                         </td>
+                                        <?php }?>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="li6">
+                            <table>
+                                <tr>
+                                    <?php if($value['pay'] == 0){?>
+                                    <td class="table_tr_td_active"><a class="go_go_pay" payorderid = "<?php echo $value['payorderid']?>" orderid ="<?php echo $value['ordersallid']?>" href="javascript:;">确认付款</a></td>
+                                    <?php } ?>
+                                    <?php if($value['post'] == 2&&$value['comment'] == 0){?>
+                                    <td><a class="go_go_comment" productid ="<?php echo $value['product']['productid']?>" payorderid = "<?php echo $value['payorderid']?>" orderid ="<?php echo $value['ordersallid']?>" href="javascript:;">评论</a></td>
+                                    <?php } ?>
+                                    <?php if($value['comment'] == 1){?>
+                                    <td><a class="comment_gogo" commentid="<?php echo $value['commentid']?>" productid ="<?php echo $value['product']['productid']?>" payorderid = "<?php echo $value['payorderid']?>" orderid ="<?php echo $value['ordersallid']?>" href="javascript:;">查看评论</a></td>
+                                    <?php } ?>
+                                </tr>
+                                <tr style="width: 120px;">
+                                    <?php if($value['post'] == 1){?>
+                                    <td class="table_tr_td_active"><a class="plese_post" orderid ="<?php echo $value['ordersallid']?>" href="javascript:;">确认收货</a></td>
+                                    <?php } ?>
+                                    <?php if($value['post'] == 0&&$value['pay'] == 1 ){?>
+                                    <td class="table_tr_td_active"><a class="plese_post_product" orderid ="<?php echo $value['ordersallid']?>" href="javascript:;">催发货</a></td>
+                                    <?php } ?>
+                                    <?php if($value['post'] == 2&&$value['returnpay'] != 3){?>
+                                    <td class="table_tr_td_active have_recive"><a href="javascript:;">已收货</a></td>
+                                    <?php } ?>
+                                </tr>
+
+                                <tr style="width: 120px;">
+                                    <?php if($value['pay'] == 1&&$value['returnpay'] == 0&&$value['post'] !=2 ){?>
+                                    <td><a class="pay_out_money" id="<?php echo $value['ordersallid']?>" href="javascript:;">申请退款</a></td>
+                                    <?php } ?>
+                                    <?php if($value['returnpay'] == 1){?>
+                                    <td><a  id="<?php echo $value['ordersallid']?>" href="javascript:;">退款中</a></td>
+                                    <?php } ?>
+                                    <?php if($value['returnpay'] == 3){?>
+                                    <td><a class="" id="<?php echo $value['ordersallid']?>" href="javascript:;">退款成功</a></td>
+                                    <?php } ?>
+                                </tr>
+                            </table>
+                        </li>
+                        <div class="clears"></div>
+                        <div style="text-align: left;">
+                            <span style="margin-left: 10px;">收获地址： <?php echo $value['address']['address'] ?></span>
+                            <span style="margin-left: 10px;">收获人电话：<?php echo $value['address']['phone'] ?></span>
+                        </div>
+                        <div class="con_zzjs_2_table_div" style="display: none;">
+                            <p style="background: #F6F6F6; text-indent:2em;"><b>我要评价</b></p>
+                            <input class="check_go" type="radio" name="sex" checked value="" commentxing = "5" lang = 'true'>★★★★★
+                            <input class="check_go" type="radio" name="sex" value="" commentxing = "4">★★★★☆
+                            <input class="check_go" type="radio" name="sex" commentxing = "3">★★★☆☆
+                            <input class="check_go" type="radio" name="sex" commentxing = "2">★★☆☆☆
+                            <input class="check_go" type="radio" name="sex" commentxing = "1">★☆☆☆☆
+                            <br/>
+                            <label>评价内容</label>
+                            <textarea class="comment_content" name="idea" cols="" row=""></textarea>
+                            <br/>
+                            <input class="submit_comment" type="submit" name="sub" value="提交评论">
+                        </div>
+                    </ul>
+                    <?php } ?>
+                 </div>
+             </div>
+     <!----------------------------------------------修改个人资料开始-------------------------------------------->
+
+     <!----------------------------------------------修改个人资料结束-------------------------------------------->             
+     <!----------------------------------------------收货地址开始-------------------------------------------->
+            <!--收获地址-->
+            <div class="shop_vip_content12" style="display:none;">
+                <h4><span>收货地址</span><a class = 'add_address_go'id="address">+收货地址</a></h4>
+                <div class="address_add_add">
+                    <?php foreach($address as $key => $value){?>
+                    <a href="javascript:;" class="address_rel_have">
+                        <ul class="content12_ul order_address_rel" id="<?php echo $value['addressid']?>">
+                            <li class="content12_ul_li1"><?php echo $value['receivename']?></li>
+                            <li class="content12_ul_li2"><?php echo $value['address']?></li>
+                            <li class="content12_ul_li3"><?php echo $value['email']?></li>
+                            <li class="content12_ul_li4"><?php echo $value['phone']?></li>
+                            <li class="content12_ul_li4">
+                               <input class="del_address" type="submit" name="sub" value="删除" style="width:60px; border:1px solid #e4000d; background:none;  font-size:16px; color:#e4000d;">
+                            </li>
+                            <div class="clears"></div>
+                        </ul>
+                    </a>
+                    <?php } ?>
+                </div>
+            </div>
+            <!--收获地址-->
+     <!----------------------------------------------收货地址结束-------------------------------------------->             
+     <!----------------------------------------------修改密码开始-------------------------------------------->
+         <div class="shop_vip_content12" style="display:none;">
+            <h4>每天互联网都会有大量用户存在着严重被盗的风险。如果您正在使用与其他网站相同的密码，建议您尽快修改。</h4>
+
+            <p>
+                <span>*当前密码:</span>
+                <input type="password" name="password_now" value="" size="" maxlength="">
+            </p>
+            <p>
+                <span>*新密码：</span>
+                <input type="password" name="password_new" value="" size="" maxlength="">
+            </p>
+            <h5>密码由6～16位半角字符（字母，数字，符号）组成，区分大小写</h5>
+            <p>
+                <span>*确认密码:</span>
+                <input type="password" name="password_new1" value="" size="" maxlength="">
+            </p>
+            <p><input type="submit" name="update_password_go" value="确认修改" style=" text-align: center; width:100px; margin-left:70px; font-size:16px; font-weight:bold; color:#FFF;">
+            </p>
+
+         </div>
+    <!----------------------------------------------修改密码结束-------------------------------------------->             
+     
+             
+        </div> 
+    </div>
+<!--vip-->
+<include file = 'shoppublic/footer'/>
+<script src="__PUBLIC__/home/js/vip.js"></script>
+<!--<script src="__PUBLIC__/home/shengshiqu/js/city2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/home/shengshiqu/js/citySelect2.js"></script>
+<div id="city_4">
+    <select class="prov" id="prov4" data-code ="220000" style="width: 120px;"></select>
+    <select class="city" id="city4" data-code ="220100" style="width: 120px;"></select>
+    <select class="dist" id="area4" data-code ="220104" style="width: 120px;"></select>
+</div>
+<script>
+    var selectVal = new CitySelect({
+        data   : data,
+        provId : "#prov4",
+        cityId : '#city4',
+        areaId : '#area4'
+    });
+</script>
+-->
+<script>
+    $('input[name = "update_password_go"]').click(function(){
+        var nowpassword = $('input[name = "password_now"]').val();
+        var newpassword =  $('input[name = "password_new"]').val();
+        var newpassword1 =  $('input[name = "password_new1"]').val();
+        if(newpassword.length<6){
+            var tmpDlg = dialog({ 'content': '新密码输入不合法' }).show();
+            setTimeout(function () {
+                tmpDlg.close().remove();
+            }, 2000);
+        }
+        else if(nowpassword.length<6){
+            var tmpDlg = dialog({ 'content': '密码输入不合法' }).show();
+            setTimeout(function () {
+                tmpDlg.close().remove();
+            }, 2000);
+        }
+        else if(newpassword1.length<6){
+            var tmpDlg = dialog({ 'content': '新密码输入不合法' }).show();
+            setTimeout(function () {
+                tmpDlg.close().remove();
+            }, 2000);
+        }
+        else if(newpassword != newpassword1){
+            var tmpDlg = dialog({ 'content': '新密码两次输入不一致' }).show();
+            setTimeout(function () {
+                tmpDlg.close().remove();
+            }, 2000);
+        }
+        else{
+            $.post('/index.php/User/updatepassword',{'password_now':nowpassword,'password_new':newpassword},function(reg){
+                if(reg.statu){
+                    var tmpDlg = dialog({ 'content': '密码修改成功' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 2000);
+                    setTimeout(function () {
+                        location.href = '/index.php/User/login';
+                    }, 2000);
+                }else{
+                    var tmpDlg = dialog({ 'content': '原密码输入错误' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 2000);
+                }
+            });
+        }
+    });
+    $('.del_address').click(function(){
+        var delid = $(this).parents('.address_rel_have').find('.order_address_rel').attr('id');
+        var del_div = $(this).parents('.address_rel_have');
+        var $box = $([
+            //加入购物车
+            '<div style="width: 140px;">',
+            '<p style="font-size: 18px; height: 50px; line-height: 50px;  color: #000;">是否确认删除?</p>',
+            '<input class="delete_go_go" style="width: 60px; height: 30px; margin-right: 8px; line-height: 30px; font-size: 14px; background: #f00; border: 1px #999 solid; text-align: center;" type="button" value="删除">',
+            '<input class="quxiao_go_go" style="width: 60px; height: 30px; line-height: 30px; margin-left: 8px; font-size: 14px; background: #f00;border: 1px #999 solid; text-align: center;" type="button" value="取消">',
+            '</div>',
+        ].join(''));
+        //---显示对话框
+        var dlg = dialog({
+            'content': $box,
+            'quickClose': false
+        }).showModal();
+        $box.find('.delete_go_go').click(function(){
+            $.post('/index.php/User/deladdress',{'addressid':delid},function(reg){
+                if(reg.statu){
+                    var tmpDlg = dialog({ 'content': '删除成功' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 2000);
+                    dlg.close().remove();
+                    del_div.remove();
+                }
+                else{
+                    var tmpDlg = dialog({ 'content': '删除失败' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 2000);
+                }
+            });
+        });
+        $box.find('.quxiao_go_go').click(function(){
+
+            dlg.close().remove();
+        });
+    });
+    $('.add_address_go').click(function(){
+        var $box = $([
+            //收获地址
+            '<ul class="edit_profile" style="display:block; width: 400px;">',
+            '<li style="margin-left: -10px;"><label>&nbsp;*收货人：</label><input type="text" name="name" value="" placeholder="" form="register"></li>',
+            '<li style="margin-left: -10px;"><label>*收获地址：</label><input style=" width:300px;" type="text" name="address" value="" placeholder="" form="register"></li>',
+            '<li style="margin-left: -10px;"><label>*邮&nbsp;&nbsp;编：</label><input type="email" name="email" value="" form="register" required autofocus></li>',
+            '<li style="margin-left: -10px;"><label>*联系电话：</label><input type="text" name="phone" value="" placeholder="" form="register"></li>',
+            '<li style="margin-left: -10px;"><input  class="sub_go" type="submit" name="sub" value="确认信息" style="width:100px; border:1px solid #e4000d; background:none; margin-left:40px; font-size:16px; color:#e4000d;">',
+            '<input class="close_address" type="reset" name="sub" value="取消" style="width:100px; border:1px solid #CCC; background:none; margin-left:40px; font-size:16px; color:#CCC;">',
+            '</li>',
+            '</ul>'
+        ].join(''));
+        //---显示对话框
+        var dlg = dialog({
+            'content': $box,
+            'quickClose': false
+        }).showModal();
+        $box.find('.close_address').click(function(){
+            dlg.close().remove();
+        });
+        $box.find('.sub_go').click(function(){
+            var name = $box.find('input[name = "name"]').val();
+            var address = $box.find('input[name = "address"]').val();
+            var email = $box.find('input[name = "email"]').val();
+            var phone = $box.find('input[name = "phone"]').val();
+            if(name == ''){
+                var tmpDlg = dialog({ 'content': '收货人不能为空' }).show();
+                setTimeout(function () {
+                    tmpDlg.close().remove();
+                }, 2000);
+            }
+            else if(address == ''){
+                var tmpDlg = dialog({ 'content': '收货地址不能为空' }).show();
+                setTimeout(function () {
+                    tmpDlg.close().remove();
+                }, 2000);
+            }
+            else if(email == ''){
+                var tmpDlg = dialog({ 'content': '收货邮箱不能为空' }).show();
+                setTimeout(function () {
+                    tmpDlg.close().remove();
+                }, 2000);
+            }
+            else if(phone == ''){
+                var tmpDlg = dialog({ 'content': '手机号码不能为空' }).show();
+                setTimeout(function () {
+                    tmpDlg.close().remove();
+                }, 2000);
+            }
+            else{
+                $.post('/index.php/User/addaddress',{'name':name,'address':address,'email':email,'phone':phone},function(reg){
+                    var $box1 = $([
+                        //
+                        '<a href="javascript:;" class="address_rel_have">',
+                        '<ul  class="content12_ul order_address_rel no_select" id="'+reg.data['id']+'">',
+                        '<li class="content12_ul_li1">'+reg.data['receivename']+'</li>',
+                        '<li class="content12_ul_li2">'+reg.data['address']+'</li>',
+                        '<li class="content12_ul_li3">'+reg.data['email']+'</li>',
+                        '<li class="content12_ul_li4">'+reg.data['phone']+'</li>',
+                        '<li class="content12_ul_li4">',
+                        '<input class="del_address" type="submit" name="sub" value="删除" style="width:60px; border:1px solid #e4000d; background:none;  font-size:16px; color:#e4000d;">',
+                        '</li>',
+                        '<div class="clears"></div>',
+                        '</ul>',
+                        '</a>'
+                    ].join(''));
+                    //---显示对话框
+                    $('.address_add_add').append($box1);
+                    dlg.close().remove();
+                });
+            }
+        });
+    });
+</script>

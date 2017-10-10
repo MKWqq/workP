@@ -1,0 +1,55 @@
+@import '../common';
+.g-AutomaticScheduce{/*1646内容1582*/
+  width:100%;padding:20/16rem 32/1646*100%;.box-sizing();
+  .g-timeHeader{
+    button{}
+    .g-gobackChart{}
+    .blueButton{}
+  }
+}
+.g-classesTimeSetSection{/*1582*/
+  width:100%;.marginTop(30);
+  ul{width:100%;
+    li{.NotLineheight(246);float:left;border:1px solid @borderColor;.box-sizing();.border-radius(6/16rem);
+      header{.height(48);.fontSize(16);color:@HColor;font-weight:bold;border-bottom:1px solid @borderColor;.box-sizing();}
+      section{width:100%;.fontSize(14);.NotLineheight(246-48-20);color:@normalColor;.marginTop(15);overflow-x:hidden;overflow-y:auto;
+        /*排课范围框——一行显示多条数据*/
+        .pkFloat{float:left;}
+        .pkRange:not(:last-of-type){.marginRight(40,246);}
+        /*周课时——独占一行*/
+        .weekRow{.marginBottom(20);
+          span:last-of-type{.marginLeft(20,246);}
+        }
+        /*教师不排——一行显示两条数据*/
+        .teacherRow:nth-child(odd){.marginRight(60,246);.marginBottom(20);}
+        /*科目预排——两次循环*/
+        .previousRow{.marginBottom(10);width:100%;
+          .previousSubject{.marginRight(25,246);}
+          .previousCloumn{float:right;width:70%;
+            .previousCell{.marginBottom(20);}
+            .previousCell:not(:last-of-type){.marginRight(26,246);}
+          }
+          .workTogetherCloumn{width:80%;}
+        }
+      }
+    }
+    li:not(:last-of-type){/*512*/
+      .width(512,1582);.marginRight(20,1582);.marginBottom(20);
+      header{padding-left:20/512*100%;}
+      section{/*492*/
+        .width(492,512);.marginLeft(20,512);
+      }
+    }
+    li:nth-of-type(3n+0){margin-right:0;}
+    li:last-of-type{/*1047*/
+      .width(1047,1582);
+      header{padding-left:20/1047*100%;}
+      section{/*1027*/
+        .width(1027,1047);.marginLeft(20,1047);
+      }
+    }
+  }
+}
+
+
+

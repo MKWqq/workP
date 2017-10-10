@@ -1,0 +1,50 @@
+@import '../common';
+.g-classSchedule{/*1646内容1582*/
+  width:100%;padding:20/16rem 32/1646*100%;.box-sizing();
+  .g-timeHeader{height:auto;
+    .g-headerButtonGroup{
+      button{}
+      .g-gobackChart{}
+      .blueButton{}
+      h2{.fontSize(20);color:@HColor;}
+    }
+    ul.changeRouter{/*1400*/
+      /*padding:0.5rem 0;*/.width(1300,1582);
+      li{float:left;.fontSize(18);.height(20);padding:0 30/16rem;text-align:center;
+        &:hover{cursor:pointer;}
+      }
+      li:not(:last-of-type){border-right:1px solid @borderColor;}
+      li.activeCss{color:@buttonActive;}
+      li.normalCss{color:@promptColor;}
+    }
+  }
+  .g-classesTimeSetSection{/*1582*/
+    width:100%;.marginTop(30);
+    &>div{float:left;}
+    .g-sectionR{/*1296*/
+      .width(1296,1582);.marginLeft(20,1582);
+      .gs-header{width:100%;margin-bottom:20/16rem;align-items:center;display:flex;display:-webkit-flex;justify-content:space-between;
+        .gs-button{.width(800,1582);
+          .elGroupButton_two{.marginLeft(60,800);}
+          .buttonChild{position:relative;}
+          a{display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;}
+          /*每一个button为72px*/
+        }
+        .gs-refresh{margin-right:1rem;
+          img{.widthRem(18);
+            &:hover{cursor:pointer;}
+          }
+        }
+      }
+      .g-timeSettingTable{
+        span{display:inline-block;.height(75);width:100%;.border-radius(10/16rem);}
+        .NotCourse{background:@intervalColor;color:@normalColor;}
+        .SetNotCourse{background:@green;color:#fff;}
+      }
+    }
+  }
+}
+
+
+
+

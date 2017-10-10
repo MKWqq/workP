@@ -1,0 +1,110 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+.rotate(@value){-moz-transform:rotate(@value);-ms-transform:rotate(@value);-o-transform:rotate(@value);-webkit-transform:rotate(@value);transform:rotate(@value);}
+*{margin:0;padding:0;font-size:14px;color:#6d6d6d;font-family:"微软雅黑"}
+#app{width:1280px;margin:auto;
+  .Header{width:100%;height:86+534px;
+    .HeaderContent{width:100%;height:86px;background:rgba(255,255,255,0.95);position:fixed;top:0;
+      .Header_logo{width:186px;height:86px;margin-left:160px;margin-right:423px;float:left;
+        img{width:100%;}
+      }
+      .Header_nav{width:351px;height:32px;margin-top:39px;float:left;
+        a:not(:nth-of-type(1)){margin-left:66px;}
+        a{display:block;float:left;width:72px;height:100%;font-size:17px;color:#4f4f4f;text-decoration:none;.box-sizing(border-box);
+          &:hover{color:#98aea0;}
+/*          &:active{color:red;}
+          &:visited{color:yellow;}*/
+        }
+      }
+    }
+    .HeaderBanner{width:100%;height:534px;margin-top:86px;
+      img{width:100%;}
+    }
+  }
+  .content{width:100%;height:1333px;background:url("./img/background_02.png") no-repeat center;
+    &>div{width:960px;margin-left:160px;}
+    .content_flat{height:205px;margin-top:68px;margin-bottom:141px;display:inline-block;
+      .flat_left{float:left;width:291px;height:100%;margin-right:179px;
+        img{width:100%;}
+      }
+      .flat_right{float:left;width:490px;height:100%;
+        h1{border-bottom:2px solid #62cec1;.box-sizing(border-box);font-size:22px;color:#1e1e1e;width:100px;height:79-39px;margin-top:39px;display:inline-block;}
+        p{word-break:break-all;line-height:22px;}
+        p:nth-of-type(1){margin-top:24px;}
+        p:nth-of-type(2){margin-top:18px;}
+      }
+    }
+    .content_application{height:415px;margin-bottom:148px;
+      .application_left{width:481px;margin-right:76px;float:left;
+        .application_LT{width:100%;height:234px;
+          h1{width:100px;border-bottom:2px solid #62cec1;.box-sizing(border-box);height:40px;font-size:22px;color:#1e1e1e;margin-bottom:24px;}
+          p{line-height:22px;}
+          p:nth-of-type(1){margin-bottom:18px;}
+          p:nth-of-type(2){}
+        }
+        .application_LB{width:100%;height:177px;margin-top:42px;
+          h1{width:100%;font-family:"楷体";font-size:18px;margin-bottom:26px;color:#1e1e1e;}
+          div[class*="application_LB"]{width:117px;height:133px;float:left;
+            div[class*="application_img"]{width:100%;height:104px;margin-bottom:12px;
+              img{width:100%;}
+            }
+            p{font-size:16px;color:#1e1e1e;}
+          }
+          .application_LBL{margin-right:59px;
+            .application_img{
+              img{}
+            }
+            p{}
+          }
+          .application_LBR{
+            .application_img{
+              img{}
+            }
+            p{}
+          }
+        }
+      }
+      .application_right{width:403px;height:229px;margin-top:64px;float:left;
+        img{width:100%;}
+      }
+    }
+    .content_contact{width:960px;height:348px;margin-left:160px;
+      &>div{float:left;}
+      .contact_header{width:89px;height:42px;margin-top:162px;margin-right:101px;font-size:22px;color:#1e1e1e;border-bottom:2px solid #62cec1;.box-sizing(border-box);}
+      .contact_sweep{width:156px;height:178px;margin-top:103px;margin-right:88px;
+        .contact_sweepImg{width:100%;height:142px;margin-left:5px;
+          img{width:146px;}
+        }
+        .contact_sweepmsg{width:100%;color:#1e1e1e;font-size:12px;margin-top:24px;font-weight:bold;}
+      }
+      .contact_msg{margin-top:85px;width:516px;height:178px;border-radius:36px;background:#21ab9a;border:1px solid transparent;.box-sizing(border-box);
+        div[class*='contact_msg']{height:127px;float:left;
+          h1{width:78px;height:28px;font-size:16px;color:#fff;margin-bottom:20px;margin-top:31px;border-bottom:2px solid #72d8da;text-align:center;.box-sizing(border-box);}
+          .contact_msgRow:not(:nth-of-type(3)){margin-bottom:15px;}
+          .contact_msgRow{width:100%;height:16px;margin-bottom:15px;
+            .contact_msgName{color:#fff;font-size:12px;
+              &:after{content:":";margin-left:4px;}
+            }
+            .contact_msgValue{color:#fff;font-size:12px;}
+          }
+        }
+        .contact_msgL{width:153px;margin-right:76px;margin-left:66px;
+          .contact_msgRow{
+            .contact_msgName{}
+            .contact_msgValue{}
+          }
+        }
+        .contact_msgR{width:176px;
+          .contact_msgRow{
+            .contact_msgName{}
+            .contact_msgValue{}
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+

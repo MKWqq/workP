@@ -1,0 +1,39 @@
+.width(@width,@parentWidth){width:(@width/@parentWidth)*100%;}
+.height(@height,@parentHeight){height:(@height/@parentHeight)*100%;}
+.middle(@marginTop,@parentWidth){margin-top:(@marginTop/@parentWidth)*100%;}
+.center(@marginLeft,@parentWidth){margin-left:(@marginLeft/@parentWidth)*100%;}
+#ModifyPwd{.width(444,1732);.middle(204,1732);.center(644,1732);
+  .confirmCancel{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);
+    .container{.width(388,1920);.height(204,1080);background:#fff;.center(766,1920);.middle(402,1920);
+      .Main{.width(334,388);.height(180,204);/*.center(24,388);*/.middle(24,388);text-align:left;display:inline-block;
+        h4{font-size:26px;color:#454545;width:100%;}
+        p{.middle(30,334);width:100%;color:#555454;}
+        .buttonContainer{.middle(30,334);width:100%;text-align:right;.height(36,180);
+          a,div{.width(56,334);text-align:center;box-sizing:border-box;padding:(8/334)*100%;height:100%;display:inline-block;text-decoration:none;
+            cursor:pointer;
+          }
+          .return{color:#555454;}
+          .go{color:#0ea4b7;.center(36,334);}
+        }
+      }
+    }
+  }
+}
+a[class*="Modify"],div[class*="Modify"]{border-radius:4px;.width(108,444);height:80%;.middle(26,444);float:left;color:#fff;text-decoration:none;display:block;
+}
+.confirmModify{.center(38,444);background:#0ea4b7;
+  &:hover{cursor:pointer;}
+  &:active{background:#1995a6;}
+}
+.cancelModify{background:#909090;.center(95,444);
+  &:hover{cursor:pointer;}
+  &:active{background:#787878;}
+}
+
+
+
+
+
+
+
+

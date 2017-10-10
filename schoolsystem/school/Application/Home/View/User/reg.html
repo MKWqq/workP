@@ -1,0 +1,109 @@
+<include file = "shoppublic/shopheader"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/login.css">
+<style>
+    .class_classfiy{ display: none;}
+</style>
+<!--login开始-->
+	<div class="big_kuangjia">
+    	<div class="kuangjia shop_login">
+        	<div class="shop_login_left fl" >
+            	<span >
+                	<img src="__PUBLIC__/home/images/logo_banner.jpg" width="530" height="350">
+                </span>
+            </div>
+            <div class="shop_login_right fr form_go">
+            	<p class="shop_login_title">会员注册</p>
+                <p style="width: 490px;"><span>手机号</span><input type="text" name="phone"  style=" border:1px #cccccc solid; width:200px; height:30px;"><span class="span_2" style="color: #999; width: 180px;"></span></p>
+                <p style="width: 490px;"><span>登录密码</span><input type="password" name="password"  style=" border:1px #cccccc solid;width:200px; height:30px;"> <span class="span_2" style="color: #999;width: 180px;"></span> </p>
+                <p style="width: 490px;"><span>验证码</span><input name="code" type="text" width="70px;" height="30px;" style=" border:1px #cccccc solid; width:70px; height:30px;">
+                    <span class="code_zhuang"  style="margin-left: 4px;"><img class="img_code" width="60px;" height="32px;" src="__PUBLIC__/home/inc/code.php"></span>
+                    <a class="code_huan" href='javascript:volid(0);' style="font-size: 12px; color: #888;">看不清换一张</a>
+                </p>
+                <div>
+                	<a href="<?php echo U('User/login')?>">
+                    	已有账号登陆 ？<span style="color:#e84248;">马上登陆</span>
+                    </a>
+                </div>
+                <p><span></span><a style="display:inline-block; height:32px; width:92px; background:#e84248; color:#fff; font-size:14px; text-align:center" class="sumbit"> 注册</a></p>
+            </div>
+            <div class="clears"></div>
+        </div>
+    </div>
+<!--login结束-->
+<include file = "shoppublic/footer"/>
+<script>
+    //换验证码
+    $('.code_huan').click(function(){
+        $(this).parent().find('.img_code').remove();
+        var $box = $([
+         '<img class="img_code" width="60px;" height="32px;" src="__PUBLIC__/home/inc/code.php">',
+        ].join(''));
+        $('.code_zhuang').append($box);
+    });
+</script>
+<script>
+    $(function(){
+        $('.form_go>p>input').click(function(){
+            if($(this).val() == ''){
+                $(this).parent().find('.span_2').html('请输入信息');
+            }
+            var isPhone = /^[1][358][0-9]{9}$/;
+            if($('input[name = "phone"]').val() != ''){
+                if( isPhone.test($('input[name = "phone"]').val())){
+                    $('input[name = "phone"]').parent().find('.span_2').text('可用')
+                }
+                else{
+                    $('input[name = "phone"]').attr('id','false');
+                    $('input[name = "phone"]').parent().find('.span_2').text('手机号码输入错误');
+                }
+            }
+            if($('input[name = "password"]').val() != ''){
+                if($('input[name = "password"]').val().length >= 6){
+                    $('input[name = "password"]').parent().find('.span_2').text('可用')
+                }
+                else{
+                    $('input[name = "password"]').attr('id','false');
+                    $('input[name = "password"]').parent().find('.span_2').text('密码长度大于六');
+                }
+            }
+        });
+        $('.sumbit').click(function(){
+            var isPhone = /^[1][358][0-9]{9}$/;
+            if(isPhone.test($('input[name = "phone"]').val()) &&$('input[name = "password"]').val().length >= 6){
+                var account = $('input[name = "phone"]').val();
+                var password = $('input[name = "password"]').val();
+                var code = $('input[name = "code"]').val();
+                $.post('<?php echo U("User/doreg")?>',{'account':account,'password':password,'code':code},function(reg){
+                    if(reg.statu == 'code'){
+                        var tmpDlg = dialog({ 'content': '你的验证码输入错误' }).show();
+                        setTimeout(function () {
+                            tmpDlg.close().remove();
+                        }, 2000);
+                    }
+                    if(reg.statu == 'account'){
+                        var tmpDlg = dialog({ 'content': '该账号已存在' }).show();
+                        setTimeout(function () {
+                            tmpDlg.close().remove();
+                        }, 2000);
+                    }
+                    if(reg.statu == true){
+                        var tmpDlg = dialog({ 'content': '注册成功' }).show();
+                        setTimeout(function () {
+                            tmpDlg.close().remove();
+                        }, 2000);
+                        setTimeout(function () {
+                            location.href = '/index.php/User/vip';
+                        }, 2000);
+                    }
+
+                });
+            }
+            else{
+                var tmpDlg = dialog({ 'content': '你输入的信息错误' }).show();
+                setTimeout(function () {
+                    tmpDlg.close().remove();
+                }, 2000);
+            }
+        });
+    })();
+</script>

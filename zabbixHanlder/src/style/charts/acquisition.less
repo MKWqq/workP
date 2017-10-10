@@ -1,0 +1,144 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+.rotate(@value){-moz-transform:rotate(@value);-ms-transform:rotate(@value);-o-transform:rotate(@value);-webkit-transform:rotate(@value);transform:rotate(@value);}
+.Content{@winWidth:1920px;
+  width:100%;height:833px;
+  .ContentTop{@inputHeight:28px;
+    .box-sizing(border-box);width:(@winWidth)-64px;margin:0 32px;height:74px;background:url('../../assets/img/acquisition_fengexian.png') no-repeat center bottom;
+    .buttonContainer{width:511px;height:@inputHeight;margin-left:10px;margin-top:26px;margin-bottom:12px;float:left;position:relative;
+      button:first-of-type{border-top-left-radius:4px;border-bottom-left-radius:4px;}
+      a:last-of-type{border-top-right-radius:4px;border-bottom-right-radius:4px;}
+      a,button{background:#fff;text-decoration:none;display:inline-block;color:#5c5c5c;width:102px;text-align:center;height:@inputHeight;line-height:@inputHeight;font-size:14px;border:1px solid #c9c9c9;float:left;.box-sizing(border-box);
+        &:focus{outline:none;}
+        &:hover{cursor:pointer;background:#448aca;color:#fff;}
+        &:active{background:#397bb8;color:#fff;}
+      }
+      button{border-right:none;}
+    }
+    .searchContainer{width:438px;height:28px;float:right;margin-top:26px;margin-right:30px;
+      input{float:left;width:438-86px;height:@inputHeight;line-height:@inputHeight;text-indent:14px;.box-sizing(border-box);border:1px solid #c9c9c9;border-right:none;
+        border-top-left-radius:(@inputHeight)/2;border-bottom-left-radius:(@inputHeight)/2;
+        &:focus{outline:none;}
+      }
+      button{float:left;width:86px;background:#448aca;height:@inputHeight;line-height:@inputHeight;text-align:center;color:#fff;.box-sizing(border-box);border:1px solid transparent;border-left:none;
+        border-top-right-radius:(@inputHeight)/2;border-bottom-right-radius:(@inputHeight)/2;
+        &:focus{outline:none;}
+        &:hover{cursor:pointer;}
+        &:active{background:#397bb8;}
+      }
+    }
+  }
+  .ContentBottom{@tableHeight:652px;
+    width:(@winWidth)-64px;margin:0 32px 0;.box-sizing(border-box);height:(@tableHeight)+15px;background:url('../../assets/img/acquisition_fengexian.png') no-repeat center bottom;
+    .ContentLeft{width:1449px;height:@tableHeight;margin-right:47px;float:left;
+
+    }
+    .ContentRight{width:360px;height:@tableHeight;float:left;
+      h1{width:100%;height:36px;line-height:36px;font-size:18px;color:#4a4a4a;}
+      .detailContent{width:100%;height:652-36-30px;
+        .detailRow:first-of-type{margin-top:30px;display:inline-block;}
+        .detailRow{width:100%;height:36px;margin-bottom:14px;
+          span:first-of-type{font-size:14px;color:#4a4a4a;}
+          span:last-of-type{font-size:13px;color:#03a0aa;}
+        }
+      }
+    }
+  }
+  .promptMsg{width:240px;height:48px;line-height:48px;border-radius:24px;margin:224px auto;text-align:center;background:#7f7f7f;color:#fff;font-size:14px;}
+  .ContentButton{}
+  .showAllData{left:62px;bottom:40px;text-decoration:underline;border:none;background:none;font-size:14px;color:#448aca;position:absolute;
+    &:hover{cursor:pointer;}
+    &:focus{outline:none;}
+  }
+  .UpdateAdd{width:100%;height:100%;background:rgba(0,0,0,.4);position:fixed;z-index:2;top:0;left:0;
+    .UpdateAddContainer{@UpdateWidth:840px;
+      width:@UpdateWidth;height:608px;margin:236px 540px;background:#fff;
+      .UpdateAddHeader{width:100%;position:relative;
+        h1{width:(@UpdateWidth)-24px;font-size:24px;color:#3e3e3e;margin-left:24px;margin-top:20px;display:inline-block;}
+        img{position:absolute;right:16px;top:16px;
+          &:hover{cursor:pointer;}
+        }
+      }
+      .UpdateAddContent{width:(@UpdateWidth)-100px;margin-left:50px;margin-top:44px;
+        .UpdateAddForm{width:100%;height:420px;
+          .UpdateAddRow{width:164+191px;height:30px;margin-bottom:30px;float:left;.box-sizing(border-box);
+            .UpdateAddInput{width:192px;height:30px;border:1px solid #b5b5b5;}
+          }
+        }
+      }
+      .UpdateFooter{width:(@UpdateWidth)-259px;margin-left:259px;height:28px;margin-top:30px;display:inline-block;
+        button:not(:last-of-type){margin-right:50px;}
+        button:nth-of-type(1){background:#959595;
+          &:active{background:#7e7e7e;}
+        }
+        button:nth-of-type(2){background:#959595;
+          &:active{background:#7e7e7e;}
+        }
+        button:nth-of-type(3){background:#448aca;
+          &:active{background:#397bb8;}
+        }
+        button{width:74px;height:28px;line-height:28px;border-radius:4px;border:1px solid transparent;.box-sizing(border-box);text-align:center;color:#fff;
+          &:focus{outline:none;}
+          &:hover{cursor:pointer;}
+        }
+      }
+    }
+  }
+  .ImportFile{width:100%;height:100%;z-index:2;background:rgba(0,0,0,.4);position:fixed;left:0;top:0;
+    .ImportFileContainer{@importWidth:502px;
+      width:@importWidth;height:247px;margin:356px 709px;background:#fff;
+      .ImportFileHeader{width:(@importWidth)-24px;margin-left:24px;position:relative;
+        h1{font-size:24px;color:#3e3e3e;margin-top:20px;display:inline-block;width:100%;}
+        img{position:absolute;top:16px;right:16px;
+          &:hover{cursor:pointer;}
+        }
+      }
+      .ImportFileContent{width:100%;
+        form{width:100%;margin-top:48px;display:inline-block;
+          .ImportFormContent{width:100%;position:relative;
+            p{width:272px;height:34px;line-height:34px;font-size:14px;color:#4a4a4a;margin-left:72px;text-indent:5px;border:1px solid #b5b5b5;.box-sizing(border-box);border-right:none;float:left;}
+            input[type='file']{width:86px;height:34px;top:0;left:272+72px;z-index:2;opacity:0;position:absolute;
+              &:hover{cursor:pointer;}
+              &:active{background:#397bb8;}
+            }
+            button{width:86px;height:34px;line-height:34px;font-size:15px;top:0;left:272+72px;color:#fff;text-align:center;border:none;position:absolute;z-index:1;background:#448aca;
+              &:focus{outline:none;}
+              &:hover{cursor:pointer;}
+              &:active{background:#397bb8;}
+            }
+          }
+          .ImportFormFooter{width:(@importWidth)-152px;margin-left:152px;margin-top:60px;display:inline-block;
+            .ImportFormButton{width:74px;height:28px;line-height:28px;font-size:14px;color:#fff;border:1px solid transparent;border-radius:4px;text-align:center;}
+            button{background:#959595;
+              &:hover{cursor:pointer;}
+              &:focus{outline:none;}
+              &:active{background:#7e7e7e;}
+            }
+            input[type='submit']{background:#448aca;margin-left:50px;
+              &:hover{cursor:pointer;}
+              &:focus{outline:none;}
+              &:active{background:#397bb8;}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

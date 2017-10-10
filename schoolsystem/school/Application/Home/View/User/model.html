@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form method="post" action="createModel">
+        创建一级导航<input type="text" name="oneNav">
+        </br>
+        </br>
+        创建二级导航
+        名字：<input type="text" name="towNav"> 属于
+        <select name="towNavTo" style="width: 200px;">
+        </select>
+        </br>
+        </br>
+        创建三级导航
+        导航名：<input type="text" name="threeNav">
+        控制器：<input type="text" name="threecontroller">
+        方法：<input type="text" name="threefunction">
+        属于
+        <select name="threeNavTo">
+
+        </select>
+        </br>
+        </br>
+        创建四级导航
+        导航名：<input type="text" name="fourNav">
+        控制器：<input type="text" name="fourcontroller">
+        方法：<input type="text" name="fourfunction">
+        属于
+        <select name="fourNavTo">
+
+        </select>
+        </br>
+        </br>
+        创建五级操作
+        导航名：<input type="text" name="fiveNav">
+        类型：<input type="text" name="fivetype">
+        属于
+        <select name="fiveNavTo">
+        </select>
+        </br>
+        </br>
+        <input type="submit" value="提交">
+    </form>
+    </br>
+    </br>
+
+    <script src="__PUBLIC__/jquery/jquery.min.js"></script>
+    <script>
+        $('input[name="towNav"]').click(function(){
+            $.post('../User/searchNav',{'level':1},function(reg){
+                var obj = reg;
+                var string = '';
+                $('select[name="towNavTo"]>option').remove();
+                for(var i = obj.length-1 ; i>=0;i--){
+                    string = "<option value="+obj[i]['modelId']+">"+obj[i]['modelName']+"</option>"+string;
+                }
+                $('select[name="towNavTo"]').append(string);
+            });
+        });
+        $('input[name="threeNav"]').click(function(){
+            $.post('../User/searchNav',{'level':2},function(reg){
+                var obj = reg;
+                var string = '';
+                $('select[name="threeNavTo"]>option').remove();
+                for(var i = obj.length-1 ; i>=0;i--){
+                    string = "<option value="+obj[i]['modelId']+">"+obj[i]['modelName']+"</option>"+string;
+                }
+                $('select[name="threeNavTo"]').append(string);
+            });
+        });
+        $('input[name="fourNav"]').click(function(){
+            $.post('../User/searchNav',{'level':3},function(reg){
+                var obj = reg;
+                var string = '';
+                $('select[name="fourNavTo"]>option').remove();
+                for(var i = obj.length-1 ; i>=0;i--){
+                    string = "<option value="+obj[i]['modelId']+">"+obj[i]['modelName']+"</option>"+string;
+                }
+                $('select[name="fourNavTo"]').append(string);
+            });
+        });
+        $('input[name="fiveNav"]').click(function(){
+            $.post('../User/searchNav',{'level':4},function(reg){
+                var obj = reg;
+                var string = '';
+                $('select[name="fiveNavTo"]>option').remove();
+                for(var i = obj.length-1 ; i>=0;i--){
+                    string = "<option value="+obj[i]['modelId']+">"+obj[i]['modelName']+"</option>"+string;
+                }
+                $('select[name="fiveNavTo"]').append(string);
+            });
+        });
+    </script>
+</body>
+</html>

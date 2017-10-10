@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+        角色名<input type="text" name="roleName">
+        <input type="button" value="创建" class="createRole">
+        </br>
+        </br>
+        选择角色<select name = "selectRole">
+
+        </select>
+        <div class="modelCheck" style="width: 1200px;">
+            <?php foreach($model as $key => $value){ ?>
+                <div style=" width: 1000px; margin-top: 20px;"><a dataValue = "<?php echo $value['modelId'] ?>" ifCheck = "false" style="display: inline-block; height: 22px; line-height: 22px;cursor: pointer; color: inherit; background: #ccc; min-width: 42px; text-align: center;"><?php echo $value['modelName']?></a> </div>
+                <div>
+                   <?php
+                   $i = 0;
+                   while(isset($value[$i])){ $j = 0;?>
+                        <div style=" margin-left: 60px; margin-top: 30px; "><a ifCheck = "false" dataValue = "<?php echo $value[$i]['modelId'] ?>" style="display: inline-block; cursor: pointer; height: 22px; line-height: 22px; color: inherit; background: #ccc; min-width: 42px; text-align: center;"><?php echo $value[$i]['modelName']?></a>
+                                <?php while(isset($value[$i][$j])) { $z = 0;?>
+                                    <div style=" margin-left: 120px; margin-top: 30px; "><a ifCheck = "false" dataValue = "<?php echo $value[$i][$j]['modelId'] ?>" style="display: inline-block;cursor: pointer; height: 22px; line-height: 22px; color: inherit; background: #ccc; min-width: 42px; text-align: center;"><?php echo $value[$i][$j]['modelName']?></a>
+                                        <?php while(isset($value[$i][$j][$z])) { $n = 0;?>
+                                        <div style=" margin-left: 120px; margin-top: 30px; "><a ifCheck = "false" dataValue = "<?php echo $value[$i][$j][$z]['modelId'] ?>" style="display: inline-block; height: 22px;cursor: pointer; line-height: 22px; color: inherit; background: #ccc; min-width: 42px; text-align: center;"><?php echo $value[$i][$j][$z]['modelName']?></a>
+                                            <?php while(isset($value[$i][$j][$z][$n])) {?>
+                                            <div style=" margin-left: 120px; margin-top: 30px; "><a ifCheck = "false" dataValue = "<?php echo $value[$i][$j][$z][$n]['modelId'] ?>" style="display: inline-block; height: 22px; cursor: pointer;line-height: 22px; color: inherit; background: #ccc; min-width: 42px; text-align: center;"><?php echo $value[$i][$j][$z][$n]['modelName']?></a>
+
+                                            </div>
+                                            <?php $n++; } ?>
+                                        </div>
+                                        <?php $z++; } ?>
+                                    </div>
+                                <?php $j++; } ?>
+                        </div>
+                    <?php $i++; } ?>
+                </div>
+            <?php } ?>
+        </div>
+        <div style="margin-top: 20px">
+            <input class="submit" style="width: 80px; height: 32px; margin-left: 120px; margin-bottom: 40px; cursor: pointer;" type="button" value="提交">
+        </div>
+    <script src="__PUBLIC__/jquery/jquery.min.js"></script>
+    <script>
+        var proModel = 0;
+        $('.createRole').click(function(){
+            var roleName = $('input[name="roleName"]').val();
+            $.post('../User/createRole',{'roleName': roleName},function(reg){
+
+            });
+        });
+        $.post('../User/getRoleList',{},function(reg){
+            var obj = reg;
+            $('select[name="selectRole"]>option').remove();
+            var string = '';
+            for(var i = obj.length-1 ; i>=0;i--){
+                string = "<option value="+obj[i]['roleId']+">"+obj[i]['roleName']+"</option>"+string;
+            }
+            $('select[name="selectRole"]').append(string);
+            $.post('../User/getRoleModelList',{'roleId':obj[0]['roleId']},function(reg1){
+                var obj1 = reg1;
+                proModel =obj1;
+                tre();
+            });
+        });
+        $('select[name="selectRole"]').change(function(){
+            var roleId = $(this).val();
+            $.post('../User/getRoleModelList',{'roleId':roleId},function(reg1){
+                var obj1 = reg1;
+                proModel =obj1;
+                tre();
+            });
+        });
+        $('.modelCheck').find('a').click(function(){
+            if($(this).attr('ifCheck') == "false"){
+                $(this).attr('ifCheck','true');
+                $(this).css("background","#f00");
+            }else{
+                $(this).attr('ifCheck','false');
+                $(this).css("background","#ccc");
+            }
+        });
+        function tre(){
+            $('.modelCheck').find('a').each(function(){
+                $(this).attr('ifCheck','false');
+                $(this).css("background","#ccc");
+                var modelId = $(this).attr('dataValue');
+                if(proModel !=null){
+                    for(var i = 0; i<proModel.length;i++){
+                        //alert(proModel[i]['modelId']);
+                        if(modelId == proModel[i]['modelId']){
+                            $(this).attr('ifCheck','true');
+                            $(this).css("background","#f00");
+                        }else{
+
+                        }
+                    }
+                }
+            });
+        }
+        $('.submit').click(function(){
+            var arr = Array();
+            $('.modelCheck').find('a').each(function(){
+                if($(this).attr('ifCheck') == "true"){
+                    arr.push($(this).attr('dataValue'));
+                }
+            });
+            if(arr.length>0){
+                var roleId = $('select[name="selectRole"]').val();
+                $.post('../User/createRoleModel',{'list':arr,'roleId':roleId},function(reg){
+                    /*$.post('../User/getRoleModelList',{'roleId':roleId},function(reg1){
+                        var obj1 = eval('(' + reg1 + ')');
+                        proModel =obj1;
+                        tre();
+                    });*/
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+#boxData{@windowWidth:1920px;@HeaderLine-height:65px;
+  width:(@windowWidth)-100px;height:(955px-102-30);.box-shadow(0 5px 10px 2px rgba(0,0,0,.3));
+  .boxDataHeader{width:100%;height:@HeaderLine-height;background:#35b3bb;
+    div{width:(@windowWidth)-100px-70px;font-size:20px;margin-left:40px;height:@HeaderLine-height;color:#fff;line-height:@HeaderLine-height;position:relative;
+      &:after{content:"(百分比/天)";position:relative;bottom:0px;left:5px;font-size:12px;color:#fff;}
+    }
+  }
+  .boxDataMain{width:(@windowWidth)-100px-50;height:(955px-102-30-65);
+    .boxContentHeader{width:100%;height:61px;
+      p{padding-top:30px;height:100%;text-align:center;font-size:28px;color:#424242;letter-spacing:14px;}
+    }
+    .dateChooseContainer{width:(@windowWidth)-100px-50-57;height:69px;margin-top:11px;margin-left:57px;
+      .chooseType{width:100%;margin-bottom:18px;height:69-26-18px;
+        .showTypeMenu{float:left;
+          div{float:left;line-height:25px;position:relative;
+            img:nth-of-type(1){margin-left:20px;width:13px;}
+            img:nth-of-type(2){margin-left:20px;width:8px;position:relative;top:2px;}
+          }
+          div:nth-of-type(1){font-size:12px;color:#383838;}
+          div:nth-of-type(2){margin-left:13px;
+            span{display:inline-block;height:100%;font-size:16px;color:#35b3bb;line-height:25px;}
+            &:hover{cursor:pointer;}
+          }
+        }
+        .childTypeMenu{float:left;
+          li{line-height:28px;font-size:12px;color:#828282;margin-left:24px;float:left;
+            &:hover{color:#35b3bb;cursor:pointer;}
+          }
+        }
+      }
+      .dateChooseInput{width:192px;height:26px;position:relative;
+        .dateInput{width:192px;height:26px;}
+        .search{position:absolute;z-index:10;right:0;top:0;width:26px;height:26px;background:#03a0aa;
+          &:before{content:url("../assets/img/search_icon.png");display:block;width:100%;height:100%;position:absolute;top:0;left:0;}
+          &:hover{cursor:pointer;}
+        }
+      }
+    }
+    .boxContentMain{width:100%;height:(955px-102-30-65)-118;
+      .boxEcharts{width:1140+95px;margin:0 15px 0 56px;height:557px;float:left;}
+      .boxContentR{width:440px;height:557px;margin-top:9px;float:left;border:1px solid #bcbcbc;border-radius:3px;
+        .boxConHeader{width:100%;height:46px;line-height:46px;/*ul*/
+          li{font-size:15px;color:#868686;text-align:center;float:left;}
+          li:nth-of-type(1){width:138px;}
+          li:nth-of-type(2){width:141px;}
+          li:nth-of-type(3){width:423-138-141px;}
+        }
+        .msgTableContainer{width:440px;height:506px;overflow:auto;
+          .msgTable{border-collapse:collapse;float:left;
+            tr:nth-of-type(odd){background:#d9d9d9;}
+            tr{width:100%;height:46px;
+              td{text-align:center;}
+              td:nth-of-type(1){width:138px;color:#434343;}
+              td:nth-of-type(2){width:141px;color:#f76f79;}
+              td:nth-of-type(3){width:423-138-141px;color:#40a5f3;}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*
+(function (){
+                     console.log(drawxAixsData)
+                     var res = [];
+                     var len = drawxAixsData.length;
+                     $.each(drawxAixsData,(index,value)=>{res.push(value)});
+                     return res;
+                  })()
+*/
+/*
+axisLabel: {
+                      rotate: 45
+                  },
+*/
+/*
+,color:rgb(105,176,255)——blue
+,color:rgb(255,139,139)——red
+*/
+/*
+{
+        tooltip : {
+            trigger: 'axis',
+
+        },
+        legend: {
+            data:['意向','预购'],
+            orient:'horizontal',
+            x:'120px',
+            y:'top',
+            textStyle:{
+              fontSize:13,
+              color:'#4a4a4a'
+            },
+            itemGap:64,
+            itemWidth:80,
+            itemHeight:14,
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLabel:{
+                  formatter:'{value}%'
+                },
+                splitLine:{
+                  show:true
+                }
+            }
+        ],
+        series : [
+            {
+                name:'预购',
+                type:'line',
+                smooth:true,
+                itemStyle: {
+                  normal: {
+                    areaStyle: {
+                      color:"rgb(255,139,139)"
+                    },
+                    lineStyle:{color:'#f76f79'}
+                  }
+                },
+                data:[30, 18, 44, 71, 39, 30, 10]
+            },
+            {
+                name:'意向',
+                type:'line',
+                smooth:true,
+                itemStyle: {
+                  normal: {
+                    areaStyle: {color:'rgb(105,176,255)'},
+                    lineStyle:{color:'#40a5f3'}
+                  }
+                },
+                data:[10, 12, 60, 23, 10, 90, 20]
+            }
+          ]
+      }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

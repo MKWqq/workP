@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue test</title>
+</head>
+<body>
+<div id="app">{{myname}}</div>
+<script type="text/javascript" src="../js/frameJs/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../js/frameJs/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            myname:"hgj"
+        },
+        computed:{
+            myname:function(){
+                return "wqq"
+            }
+        }
+    })
+</script>
+</body>
+</html>

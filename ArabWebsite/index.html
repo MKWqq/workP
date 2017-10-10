@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/keyboard.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="js/nicescroll/nicescroll.css" />
+    <script type="text/javascript" src="js/frameJs/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/frameJs/vue.js"></script>
+    <script type="text/javascript" src="js/frameJs/keyboard.js"></script>
+    <script type="text/javascript" src="js/datepicker/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/datepicker/datepicker-ar.js"></script>
+    <script type="text/javascript" src="js/nicescroll/nicescroll.js"></script>
+<!--    <link rel="stylesheet/less" type="text/css" href="../css/index.less" />
+    <script type="text/javascript" src="../js/less.js"></script>-->
+</head>
+<body>
+<div id="content_header"></div>
+<!--width:800px;left:居中-->
+<div id="content_body">
+    <div id="content_bodyText">
+        <header id="content_top">
+            <div id="top_center">
+                <!--send ajax-->
+                <section id="search_button">
+                    <img src="img/search_icon_normal.png" id="search_buttonImg" />
+                </section>
+                <section id="search_text">
+                    <!--<div id="keyboard_buttonContainer">
+                        <img src="img/jianpan_03.png" id="keyboard_buttonImg" />
+                    </div>-->
+                    <div id="keyboard_textInput">
+                        <input lang="Arabic" type="text" id="keyboardInput" vki-attach="true" />
+                        <img src="img/jianpan_03.png" id="keyboard_buttonImg" />
+                    </div>
+                </section>
+                <section id="search_img">
+                    <img src="img/search.png" id="search_imgContent" />
+                </section>
+            </div>
+        </header>
+        <section id="content_bottom">
+            <div id="bottom_left">
+                <div id="weather">
+                    <canvas id="mycanvas" width="197px" height="200px"></canvas>
+                    <!--<a href="" id="weatherHref" target="_blank">
+
+                    </a>-->
+                </div>
+                <div id="datePart"></div>
+                <div id="earthPart">
+                    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=033n28s08w9&amp;m=0&amp;s=199&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+                </div>
+                <div id="newsPart">
+                    <div id="newsPart_top" class="newsPartContainer">
+                        <header class="news_Header">
+                            <!--v-for newsTopData-->
+                            <div id="" class="new_topHeaderText" v-on:click="newsTopDataChange(index)" v-for="(index,newstopdata) in newsTopData" v-bind:class="[{'new_topHeaderTextActive':newstopdata.activeFlog},'new_topHeaderTextCommon']" v-text="newstopdata.newsClassify"></div>
+                        </header>
+                        <section class="news_Content">
+                            <a class="new_ContentT" target="_blank" v-bind:href="newsTopImg.url">
+                                <img v-bind:src="newsTopImg.urlToImage" />
+                                <div class="new_ContentTComment" v-text="newsTopImg.title"></div>
+                            </a>
+                            <div class="new_ContentB">
+                                <div  class="new_ContentBContainer">
+                                    <a v-bind:href="articleText.url" target="_blank" class="new_contentRow" v-if="index!=0" v-for="(index,articleText) in newsTopArticleData">
+                                        <div class="newtip"></div>
+                                        <div class="new_contentHeader" v-text="articleText.title"></div>
+                                        <div class="clear"></div>
+                                    </a>
+                            </div>
+                               <!-- <ul class="new_ContentBContainer">
+                                    &lt;!&ndash;v-for&ndash;&gt;
+                                    <li class="new_contentHeader" v-for="articleText in newsTopArticleData" v-text="articleText.title"></li>
+                                </ul>-->
+                            </div>
+                        </section>
+                    </div>
+                    <div id="newsPart_bottom" class="newsPartContainer">
+                        <header class="news_Header">
+                            <!--v-for newsTopData-->
+                            <div class="new_topHeaderText" v-on:click="newsBottomDataChange(index)" v-for="(index,newsbottomdata) in newsBottomData" v-bind:class="[{'new_topHeaderTextActive':newsbottomdata.activeFlog},'new_topHeaderTextCommon']" v-text="newsbottomdata.newsClassify"></div>
+                        </header>
+                        <section class="news_Content">
+                            <a v-bind:href="newsBottomImg.url" target="_blank" class="new_ContentT">
+                                <img v-bind:src="newsBottomImg.urlToImage" />
+                                <div class="new_ContentTComment" v-text="newsBottomImg.title"></div>
+                            </a>
+                            <div class="new_ContentB">
+                                <div class="new_ContentBContainer">
+                                    <a v-bind:href="articleText.url" target="_blank" class="new_contentRow" v-if="index!=0" v-for="articleText in newsTopArticleData">
+                                        <div class="newtip"></div>
+                                        <div class="new_contentHeader" v-text="articleText.title"></div>
+                                        <div class="clear"></div>
+                                    </a>
+                                </div>
+                                <!--<ul class="new_ContentBContainer">
+                                    &lt;!&ndash;v-for&ndash;&gt;
+                                    <li class="new_contentHeader" v-for="articleText in newsBottomArticleData" v-text="articleText.title"></li>
+                                </ul>-->
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom_right">
+                <section id="bottom_rightT">
+                    <div id="bottom_rightTC">
+                        <div class="bottom_rightTCRow" v-for="rowContent in bottom_rightTCContent">
+                            <a class="bottom_rightTCColumn" target="_blank" v-bind:href="bottomTCHref"   v-for="(index,bottomTCHref) in rowContent.bottom_rightTCHref">
+                                <div class="bottom_rightTCColumnT">
+                                    <img v-bind:src="rowContent.bottom_rightTCImg[index]" />
+                                </div>
+                                <div class="bottom_rightTCColumnB" v-text="rowContent.bottom_rightTCText[index]">
+                                    <!--{{rowContent.bottom_rightTCText[index]}}-->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section id="bottom_rightB">
+                    <div class="bottom_rightBContent" v-for="rowContent in bottomRightBRow">
+                        <header class="bottom_rBCH">
+                            <div class="bottom_rBCHLine"></div>
+                            <div class="bottom_rBCHText" v-text="rowContent.headerText"><!--{{rowContent.headerText}}--></div>
+                        </header>
+                        <section class="bottom_rBCContent" v-bind:style="{height:bottom_rightBCContentHgt[$index]+'px'}">
+                            <a v-bind:href="rowContent.TextHref[$index]" target="_blank" v-bind:class="'bottom_rBCContentText'+($index % 5)" v-for="contentText in rowContent.contentText">{{contentText}}</a>
+                        </section>
+                        <section class="bottom_rBCContentGame" v-if="rowContent.GameFlog">
+                            <header class="bottom_rBCGHeader" v-text="rowContent.GameMessage.headerMessage"><!--{{rowContent.GameMessage.headerMessage}}--></header>
+                            <section class="bottom_rBCGContent">
+                                <a v-bind:class="['bottom_rBCGImgTotal','bottom_rBCGImg'+($index % 10)]" v-bind:href="rowContent.GameMessage.GameHref[$index]" target="_blank" v-for="gameImg in rowContent.GameMessage.GameImg">
+                                    <img class="bottom_rBCGImg" v-bind:src="gameImg" />
+                                    <span class="bottom_rBCGText" v-text="rowContent.GameMessage.GameText[$index]"><!--{{rowContent.GameMessage.GameText[$index]}}--></span>
+                                </a>
+                            </section>
+                        </section>
+                    </div>
+                </section>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+</div>
+<!--<script type="text/javascript" src="http://fw.qq.com/ipaddress"></script>-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#datePart").datepicker();
+        VKI_attach(document.getElementById("keyboardInput"));
+        $('.new_ContentB').niceScroll({
+            cursorcolor: "#ccc",//#CC0071 光标颜色
+            cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: "5px", //像素光标的宽度
+            cursorborder: "0", // 	游标边框css定义
+            cursorborderradius: "5px",//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        });
+/*        $('#newsPart_bottom').niceScroll({
+            cursorcolor: "#ccc",//#CC0071 光标颜色
+            cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: "5px", //像素光标的宽度
+            cursorborder: "0", // 	游标边框css定义
+            cursorborderradius: "5px",//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        });*/
+        $.getJSON("http://171.221.202.190:11111/news.php?callback=?",function(data){console.log(data)});
+    });
+
+</script>
+</body>
+</html>

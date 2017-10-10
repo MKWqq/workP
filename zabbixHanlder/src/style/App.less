@@ -1,0 +1,52 @@
+.box-sizing(@value){-moz-box-sizing:@value;-ms-box-sizing:@value;-o-box-sizing:@value;-webkit-box-sizing:@value;box-sizing:@value;}
+.box-shadow(@value){-moz-box-shadow:@value;-o-box-shadow:@value;-ms-box-shadow:@value;-webkit-box-shadow:@value;box-shadow:@value;}
+*{margin:0;padding:0;font-size:14px;font-family:"Microsoft YaHei";list-style:none;}
+body{overflow:hidden;margin:0;position:relative;}
+#app{@winWidth:1920px;@winHeight:955px;
+  width:@winWidth;
+  #Header{width:100%;height:70px;position:relative;z-index:2;background:#448aca;.box-shadow(0 4px 6px 0 rgba(0,0,0,0.4));
+    .HeaderText{margin-left:32px;
+      p{float:left;line-height:70px;font-size:20px;font-weight:bold;color:#fff;
+        &.NavText{text-indent:40px;position:relative;
+          &:before{content:"";position:absolute;left:20px;top:25px;display:inline-block;width:0;height:22px;border-right:2px solid #fff;}
+        }
+      }
+    }
+  }
+  #Main{width:100%;height:(@winHeight)-70px;
+    #MainHeader{@mainHeaderHgt:52px;
+      width:@winWidth;height:52px;background:#e6e6e6;
+      div[class*="Container"],a[class*='Container']{margin-left:24px;float:left;height:@mainHeaderHgt;position:relative;
+        &.searchContainer{margin-left:26px;}
+        div.ChildNavShow{text-indent:6px;color:#646464;border-right:1px solid transparent;border-left:1px solid transparent;height:@mainHeaderHgt;line-height:@mainHeaderHgt;position:relative;
+          &:after{content:url("../assets/img/caozuo_xiala.png");margin-left:10px;position:relative;margin-right:6px;}
+          &:hover{border-right-color:#c5c5c5;border-left-color:#c5c5c5;background:#e3e3e3;cursor:pointer;}
+        }
+        ul.ChildNav{position:absolute;top:@mainHeaderHgt;left:0;height:40px;z-index:10;
+          li,a{background:#e3e3e3;color:#767676;text-indent:12px;height:40px;line-height:40px;text-decoration:none;display:block;
+            &:hover{background:#76a8d4;color:#fff;cursor:pointer;}
+          }
+        }
+        &.searchContainer,&.gslbContainer{
+          ul.ChildNav{width:106px;
+            li{width:100%;}
+          }
+        }
+        &.chartsContainer,&.reportContainer{
+          ul.ChildNav{width:200px;
+            li{width:100%;}
+          }
+        }
+      }
+      .serverContainer{text-indent:6px;color:#646464;line-height:@mainHeaderHgt;text-decoration:none;display:block;border-right:1px solid transparent;border-left:1px solid transparent;
+        &:after{content:'';margin-right:6px;}
+        &:hover{border-right-color:#c5c5c5;border-left-color:#c5c5c5;background:#e3e3e3;cursor:pointer;}
+      }
+    }
+    #Content{}
+  }
+}
+
+
+
+

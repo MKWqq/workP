@@ -1,0 +1,113 @@
+<include file = 'shoppublic/shopheader'/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/vip.css">
+<style>
+    .class_classfiy{ display: none;}
+    .active_address_border{ border: 1px #e04141 solid;}
+    .no_select{ border: 1px #eeeeee solid;}
+</style>
+<!--vip-->
+	<div class="big_kuangjia">
+    	<div class="kuangjia shop_vip_class">
+            <ul>
+                <li><a href="<?php echo U('User/vip')?>">会员中心</a>
+                </li>
+                <li><a href="<?php echo U('Shopcar/index')?>">购物车</a>
+                </li>
+                <li > <a href="<?php echo U('Order/index')?>">订单中心</a>
+                </li>
+                <li class="active"><a href="<?php echo U('User/addcard')?>">vip会员卡充值</a>
+                </li>
+            <div class="clears"> </div>
+        </ul>
+            <div style="text-align: left; height: 500px; width: 800px; margin-left: auto;margin-right: auto;">
+                <div style="width: 460px; float: left; margin-top: 40px;">
+                    <div style="width: 460px; border: 1px #ddd solid; margin-top: 20px;">
+                        <p style="font-size: 18px; color: #e4000d; width: 400px; margin-left: 14px; height: 60px; line-height: 60px; ">
+                            欢迎来到积分充值中心
+                        </p>
+                        <p style="height: 50px; line-height: 50px;">
+                            <span style="display: inline-block; height: 52px; line-height: 52px; width: 120px; font-size: 16px; color:#111; text-align: center;">会员卡卡号:</span>
+                            <input type="text" name="cardaccount" style="width:260px; font-size: 15px; color: #666; height: 36px; border: 1px #ddd solid;">
+                        </p>
+                        <p style="margin-top: 20px;">
+                            <span style="display: inline-block; height: 52px; line-height: 52px; width: 120px; font-size: 16px; color:#111; text-align: center;">会员卡密码:</span>
+                            <input type="text" name="cardpassword" style="width:260px; font-size: 15px; color: #666; height: 36px; border: 1px #ddd solid;">
+                        </p>
+                        <p style="margin-top: 20px;">
+                            <a class="card_add_go" style=" margin-left:140px;display: inline-block; width: 60px; height: 32px; line-height: 32px; font-size: 16px; color: #fff; text-align: center; background: #428bca;">
+                                充值
+                            </a>
+                        </p>
+                        <p style="height: 30px;">
+
+                        </p>
+                    </div>
+                    <div style="font-size: 16px; color:#e4000d; text-align: center; margin-top: 60px; ">
+                        中国养生文化研究中心真诚的为您的健康服务
+                    </div>
+                </div>
+                <div style="float: right; margin-top: 40px;">
+                    <div style="width: 300px; margin-left: auto; margin-right: auto; text-align: left;">
+                    <p style="font-size: 18px; color: #e4000d; margin-top: 10px; text-align: center;">vip会员卡兑换规则</p>
+                    <p style="font-size: 16px; color: #444; margin-top: 10px; line-height: 30px;">
+                        第一步：首先用户需要有中国养生文化研究中心工作人员颁发的vip积分卡。</br>
+                        第二步：在会员卡卡号里面输入会员卡卡号,在会员卡密码里面输入会员卡刮开的密码,点击充值完成。
+                        </p>
+                        <p style="margin-top: 20px;">
+                            <img src="__PUBLIC__/home/images/vipcode.jpg" style="width: 100%;">
+                        </p>
+                    </div>
+                </div>
+                <div class="clears"></div>
+            </div>
+        </div> 
+    </div>
+<!--vip-->
+<include file = 'shoppublic/footer'/>
+<script>
+    $('.card_add_go').click(function(){
+        var cardaccount = $('input[name = "cardaccount"]').val();
+        var cardpassword = $('input[name = "cardpassword"]').val();
+        if(cardaccount.length<12){
+            var tmpDlg = dialog({ 'content': '积分卡账号输入不合法' }).show();
+            setTimeout(function () {
+                tmpDlg.close().remove();
+            }, 3000);
+        }
+        else if(cardpassword.length<12){
+            var tmpDlg = dialog({ 'content': '积分卡密码输入不合法' }).show();
+            setTimeout(function () {
+                tmpDlg.close().remove();
+            }, 3000);
+        }
+        else{
+            $.post('/index.php/User/add_cardcode',{'cardaccount':cardaccount,'cardpassword':cardpassword},function(reg){
+                if(reg.statu =='chenggong'){
+                    var tmpDlg = dialog({ 'content': '充值成功' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 3000);
+                    location.href = '/index.php/User/vip';
+                }
+                else if(reg.statu == 'account'){
+                    var tmpDlg = dialog({ 'content': '积分卡账号输入错误' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 3000);
+                }
+                else if(reg.statu == 'password'){
+                    var tmpDlg = dialog({ 'content': '积分卡密码输入错误' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 3000);
+                }
+                else if(reg.statu == 'accounthave'){
+                    var tmpDlg = dialog({ 'content': '积分卡已经使用' }).show();
+                    setTimeout(function () {
+                        tmpDlg.close().remove();
+                    }, 3000);
+                }
+            })
+        }
+    });
+</script>

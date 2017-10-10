@@ -1,0 +1,22 @@
+
+
+/*!*添加与编辑弹框*!
+.g-liOneWrapRow .el-form-item{.widthRem(385);}
+.g-liOneWrapRow .el-select{width:100%;}
+!*维修详情弹框*!
+.g-repairDetail{border-bottom:2/16rem solid @borderColor;.marginBottom(20);}
+.g-liOneWrapRow .g-detailRow{.widthRem(385);}
+.g-detailRow{width:100%;.marginBottom(36);
+  .g-detailLable{display:inline-block;.widthRem(80);text-align:right;margin-right:10/16rem;}
+  span{.fontSize(14);color:@normalColor;}
+}
+.g-repairPerson{
+  ul{width:100%;}
+  li{width:7.5rem;height:7.5rem;margin-right:10/16rem;.marginBottom(10);
+    img{width:100%;}
+  }
+}*/
+
+
+
+

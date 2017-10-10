@@ -1,0 +1,13 @@
+查询类：SN      ippool     gslb-agent（共3个）
+
+gslb：gslb1   gslb2（共2个）
+
+图标类：cdn   gcms    program_ranking     IPTV Service       export       List_Monitoring
+        
+        Acquisition program           cdr         channel         Program run percentage
+        
+        （共8个）
+
+The report：机顶盒在线情况      服务器信息/业务内容       在线问题反馈处理
+            
+            频道节目报错（共4个）
