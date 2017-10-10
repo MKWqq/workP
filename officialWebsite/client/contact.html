@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/jquery.fullPage.css" />
+    <!--<link rel="stylesheet" href="../js/jqm/jquery.mobile-1.4.5.min.css" />-->
+<!--    <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet/less" href="../css/index.less" />-->
+    <!--<link rel="stylesheet" href="../css/index.css" />-->
+    <!--自适应引入css-->
+    <link rel="stylesheet" media="screen and (max-width:767px)" href="css/contactxs.css" />
+    <link rel="stylesheet" media="screen and (min-width:767px) and (max-width:992px)" href="css/contactsm.css" />
+    <link rel="stylesheet" media="screen and (min-width:992px) and (max-width:1200px)" href="css/indexmd.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="css/indexlg.css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <title>联系我们</title>
+    <style>
+        /*@font-face{font-family:"newfont";src:url("../font/icon1.ttf");}*/
+        *{margin:0;padding:0;font-family:"微软雅黑";}
+        li{list-style:none;}
+        h1,p {display: block;margin: 0;}
+        a{text-decoration:none;color:inherit;}
+    </style>
+</head>
+<body>
+<div id="fullpage">
+    <!--ONE PAGE=====================-->
+    <div class="section" id="first">
+        <header id="nav">
+            <div class="nav_topTotal nav_topTotal_before">
+                <div class="nav_topTotalTxt"></div>
+                <div class="backclick">
+                    <img src="img/page1/guanbi.png" class="page1_back page1_back_before" />
+                </div>
+            </div>
+            <ul class="ul_before">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product Scheme</a>
+                </li>
+                <li>
+                    <img src="img/page1/nav_03.png" />
+                    <a href="contact.html">Contact Us</a>
+                </li>
+                <li><a href="download.html">APK download</a></li>
+                <li class="clear"></li>
+            </ul>
+            <!--<div class="translateButton">中文</div>-->
+            <img src="img/page1/icon.png" class="inco inco_before" />
+        </header>
+        <div class="first_content">
+            <section class="page1-imgtotal">
+                <img src="img/page1/banner_quan_03(1).png" class="page1_bgtotal" />
+                <img src="img/contanct/map.gif" class="contact_mappoint" />
+                <img src="img/contanct/line.png" class="contact_map" />
+             </section>
+            <!--<div class="page1-textTotal">
+                <div class="page1-textRow">
+                    <div class="page1-textImg">
+                        <img src="../img/contanct/telephone_241px_1154829_easyicon.net.png" />
+                    </div>
+                    <div class="page1-textTxt">86-756-6801600</div>
+                </div>
+                <div class="page1-textRow">
+                    <div class="page1-textImg">
+                        <img src="../img/contanct/fax_512px_1133170_easyicon.net.png" />
+                    </div>
+                    <div class="page1-textTxt">86-756-6801798</div>
+                </div>
+                <div class="page1-textRow">
+                    <div class="page1-textImg">
+                        <img src="../img/contanct/location_233px_1148520_easyicon.net.png" />
+                    </div>
+                    <div class="page1-textTxt">66 Yongda Road Hongqi Town, Jinwan District Zhuhai 519090 China</div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <footer class="section fp-auto-height" id="myfooter">
+        <div class="wrapper">
+            <img src="img/footer/footer_02.png" class="footertotal" />
+        </div>
+    </footer>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<script type="text/javascript" src="js/less.js"></script>
+<!--<script type="text/javascript" src="../js/jqm/jquery.mobile-1.4.5.min.js"></script>-->
+<script type="text/javascript">
+
+    /*fullPage应用-----------------------*/
+    $(function(){
+        $("#fullpage").fullpage({
+            "verticalCentered":true,
+            "css3":true,
+            "sectionsColor":["#5690cf",""],//背景色#5690cf
+            anchors:["",""],//锚
+            "navigation":false,//是否有小点
+            "navigationPosition":"right",//小点的位置
+            /*"navigationTooltips":["test1","test2","test3","test4"],//右边小点hover的提示信息*/
+            "$navHeight":96
+        });
+    });
+</script>
+
+</body>
+</html>
